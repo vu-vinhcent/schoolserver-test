@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Search</title>
+  <script>
+$(document).load(function() {
+    $("#heading").innerHTML = 'Loading';
+});
+</script>
+
+</head><body>
+<div id="input" align="center">
+<form method="POST"> First name:<br>
+  <input name="firstname" type="text" required><br>
+Last name:<br>
+  <input name="lastname" type="text" required><br>
+  <br>
+  <input value="Submit" type="submit"></form>
+</div>
+
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<div align="center">
+<h2 id="heading">Loading </h2>
+{% for item in data %}</br></br>
+{{ item }}
+{% endfor %}
+</div>
+
+</body>
+<script>
+$(document).ready(function() {
+    $("#heading").text("Basic Information");
+});
+</script>
+</html>
+
