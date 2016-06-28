@@ -2,6 +2,16 @@ from flask import Flask, render_template, request, Response
 from bs4 import BeautifulSoup
 import requests
 
+def get_relatives(profile_url):
+    r = requests.get(profile_url)
+    names = []
+    soup = BeautifulSoup(r.text)
+    for i in soup.findAll("div", {"data-react-class":"LocationHistory"}):
+        for link in i.findAll('a'):
+            if link.string != None and link.string != 'VIEW DETAILS':
+                names.append(str(link.string))
+    return names
+
 def search_person(first, last, state, city):
     url = 'http://www.spokeo.com/' + first + '-' + last + '/' + state + '/' + city
     r = requests.get(url)
