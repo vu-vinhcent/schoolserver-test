@@ -2,30 +2,27 @@ from flask import Flask, render_template, request, Response
 from bs4 import BeautifulSoup
 import requests
 
-def get_relatives(profile_url):
-    r = requests.get(profile_url)
+def get_relatives(soup):
     names = []
-    soup = BeautifulSoup(r.text)
     for i in soup.findAll("div", {"data-react-class":"LocationHistory"}):
         for link in i.findAll('a'):
             if link.string != None and link.string != 'VIEW DETAILS':
                 names.append(str(link.string))
     return names
 
+def get_summary(soup):
+    info = []
+    result = soup.find("div", {"class":"profile_summary_subtitle"})
+    result = soup.find_all('span', {'class' : 'brief_subtitle'})
+    for r in result:
+        info.append(r.text)
+    return info
+
 def search_person(first, last, state, city):
     url = 'http://www.spokeo.com/' + first + '-' + last + '/' + state + '/' + city
     r = requests.get(url)
     print '+++Requesting: ' + url
     return r
-
-def parse_summary(data):
-    soup = BeautifulSoup(data)
-    count = 0
-    result = soup.find_all('span', {'class' : 'brief_subtitle'})
-    info = []
-    for r in result:
-        info.append(r.text)
-    return info
 
 def stream_template(template_name, **context):
     application.update_template_context(context)
@@ -39,7 +36,6 @@ def query_person(first, last):
 
     for place in places:
         r = search_person(first, last, place[0], place[1])
-
         if r.status_code != 200:
             print '+++Bad Response'
             exit()
@@ -53,14 +49,12 @@ def query_person(first, last):
                 profile = 'http://www.spokeo.com' + a['href']
                 profiles.append(profile)
                 print '+++Profile added: ' + profile
-
         for profile in profiles:
             r = requests.get(profile)
-            soup = BeautifulSoup(r.text)
-            result = soup.find("div", {"class":"profile_summary_subtitle"})
-            if result == None:
-                continue
-            yield ' '.join(parse_summary(str(result)))
+            html = BeautifulSoup(r.text)
+            #relatives = get_relatives(html)
+            basic_info = get_summary(html)
+            yield ' '.join(basic_info)
 
 application = Flask(__name__)
 
@@ -74,4 +68,4 @@ def search():
 		return Response(stream_template('search.html', data=query_person(first, last)))
 
 if __name__ == "__main__":
-    application.run(host='0.0.0.0')
+    application.run(host='0.0.0.0', debug=True)
