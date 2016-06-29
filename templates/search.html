@@ -23,13 +23,14 @@ Last name:<br>
 <div align="center">
 <h2 id="heading">Loading </h2>
 {% for item in data %}
+{% if item['basic_info'] %}
 <h3>Basic information:</h3>
 {{ ' '.join(item['basic_info']) }}
 <h3>Relatives:</h3>
 {{ ', '.join(item['relatives']) }}
+{% endif %}
 {% endfor %}
 </div>
-
 </body>
 <script>
 $(document).ready(function() {

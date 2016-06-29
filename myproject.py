@@ -33,13 +33,11 @@ def stream_template(template_name, **context):
 
 def query_person(first, last):
     places = [['Georgia', 'Columbus'], ['Alabama', 'Phenix-City']]
-
     for place in places:
         r = search_person(first, last, place[0], place[1])
         if r.status_code != 200:
             print '+++Bad Response'
             exit()
-
         profiles = []
         soup = BeautifulSoup(r.text)
         for a in soup.findAll('a', href=True):
