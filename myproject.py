@@ -52,9 +52,10 @@ def query_person(first, last):
         for profile in profiles:
             r = requests.get(profile)
             html = BeautifulSoup(r.text)
-            #relatives = get_relatives(html)
+            relatives = get_relatives(html)
             basic_info = get_summary(html)
-            yield ' '.join(basic_info)
+            results = {'relatives' : relatives, 'basic_info' : basic_info}
+            yield results
 
 application = Flask(__name__)
 
