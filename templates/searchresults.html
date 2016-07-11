@@ -16,5 +16,36 @@
     </fieldset>
     <input id="sub" class="btn btn-default" value="Submit" type="submit"></form>
   </form>
+  <div id="resultbox" class="table-responsive" style="overflow: auto; width:70%; height:340px; margin-left:auto; margin-right:auto;border-radius: 5px; padding: 0px; background-color:white;">
+  <table class="table table-hover" style="">
+  {% for dict_item in data %}
+    <tr>
+   <td>Name: </td><td>{{dict_item['name']}}</td>
+    </tr>
+   <tr>
+   <td>DOB: </td><td>{{dict_item['dob']}}</td>
+   </tr>
+   <tr>
+   <td>Age: </td><td>{{dict_item['age']}}</td>
+   </tr>
+   <tr>
+   <td>Locations: </td><td>{{', '.join(dict_item['locations'])}}</td>
+   </tr>
+   <tr>
+   <td>Marital Status: </td><td>{{dict_item['includes']['marital_status']}}</td>
+   </tr>
+   <tr>
+   <td>Relatives: </td><td>{{', '.join(dict_item['relatives'])}}</td>
+   </tr>
+   <tr>
+   <td>Aliases: </td><td>{{', '.join(dict_item['aliases'])}}</td>
+   </tr>
+   <tr bgcolor="#FFFFFF"; height="30px;"></tr>
+
+  {% endfor %}
+</table>
+</div>
+</div>
 </body>
 </html>
+
