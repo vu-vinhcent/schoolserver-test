@@ -16,36 +16,41 @@
     </fieldset>
     <input id="sub" class="btn btn-default" value="Submit" type="submit"></form>
   </form>
-  <div id="resultbox" class="table-responsive" style="overflow: auto; width:70%; height:340px; margin-left:auto; margin-right:auto;border-radius: 5px; padding: 0px; background-color:white;">
-  <table class="table table-hover" style="">
-  {% for dict_item in data %}
-    <tr>
-   <td>Name: </td><td>{{dict_item['name']}}</td>
-    </tr>
-   <tr>
-   <td>DOB: </td><td>{{dict_item['dob']}}</td>
-   </tr>
-   <tr>
-   <td>Age: </td><td>{{dict_item['age']}}</td>
-   </tr>
-   <tr>
-   <td>Locations: </td><td>{{', '.join(dict_item['locations'])}}</td>
-   </tr>
-   <tr>
-   <td>Marital Status: </td><td>{{dict_item['includes']['marital_status']}}</td>
-   </tr>
-   <tr>
-   <td>Relatives: </td><td>{{', '.join(dict_item['relatives'])}}</td>
-   </tr>
-   <tr>
-   <td>Aliases: </td><td>{{', '.join(dict_item['aliases'])}}</td>
-   </tr>
-   <tr bgcolor="#FFFFFF"; height="30px;"></tr>
+  <div style="margin: 0 auto;  padding:20px;">
+  {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
+  <div id="resultbox" class="table-responsive" style="margin:20px; display: inline-block;border-radius: 5px;  vertical-align:top; padding: 10px; background-color:white;">
+  {% if dict_item['name'] %}
+  Name: </td><td>{{dict_item['name']}}</br>
+  {% endif %}
 
+  {% if dict_item['dob'] %}
+  DOB: </td><td>{{dict_item['dob']}}</br>
+  {% endif %}
+
+  {% if dict_item['age'] %}
+  Age: </td><td>{{dict_item['age']}}</br>
+  {% endif %}
+
+  {% if dict_item['locations'] %}
+  Locations: </td><td>{{', '.join(dict_item['locations'])}}</br>
+  {% endif %}
+
+  {% if dict_item['marital_status'] %}
+  Marital Status: </td><td>{{dict_item['includes']['marital_status']}}</br>
+  {% endif %}
+
+  {% if dict_item['relatives'] %}
+  Relatives: </td><td>{{', '.join(dict_item['relatives'])}}</br>
+  {% endif %}
+
+  {% if dict_item['aliases' ] %}
+  Aliases: </td><td>{{', '.join(dict_item['aliases'])}}</br>
+  {% endif %}
+
+  </div>
   {% endfor %}
-</table>
+</div>
 </div>
 </div>
 </body>
 </html>
-
