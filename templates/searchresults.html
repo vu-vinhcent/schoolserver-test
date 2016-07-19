@@ -7,18 +7,29 @@
   <title>Search</title>
 </head>
 <body style="background-color:#00233E">
-  <form style="width:20%; padding:20px; margin-left:auto; margin-right:auto;" method="POST">
-    <fieldset class="form-group">
-      <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
-    </fieldset>
-    <fieldset class="form-group">
-      <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
-    </fieldset>
-    <input id="sub" class="btn btn-default" value="Submit" type="submit"></form>
-  </form>
+  <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
+    <h1>Public Information</h1>
+    There is a shocking amount of information publicly available. Knowing someone's name and location
+    is often all you need to find specific details about someone. Type your first and last name into the
+    form below to see if we can find information about you.
+    <form style="width:20%; padding:20px; margin-left:auto; margin-right:auto;" method="POST">
+      <fieldset class="form-group">
+        <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
+      </fieldset>
+      <fieldset class="form-group">
+        <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
+      </fieldset>
+      <input id="sub" class="btn btn-default" value="Submit" type="submit"></form>
+    </form>
+  </div>
+
+  <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
+    <h1>Results</h1>
+
+
   <div style="margin: 0 auto;  padding:20px;">
   {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
-  <div id="resultbox" class="table-responsive" style="margin:20px; display: inline-block;border-radius: 5px;  vertical-align:top; padding: 10px; background-color:white;">
+  <div id="resultbox" style="margin:20px; display: inline-block;border-radius: 5px;  vertical-align:top;padding: 10px; background-color:white;">
   {% if dict_item['name'] %}
   Name: </td><td>{{dict_item['name']}}</br>
   {% endif %}
@@ -49,6 +60,17 @@
 
   </div>
   {% endfor %}
+</div>
+</div>
+  <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
+    <h1>Conclusion</h1>
+    Did you find any information that resembled yourself? Many people upload private information to social
+    networking sites. This information can be used in a social engineering attack to impersonate you and gain access
+    to your personal accounts. There are sites that aggregate publicly available information such as:
+     <a href="http://www.spokeo.com/">spokeo</a> and <a href="https://pipl.com/">pipl</a>.
+  </div>
+
+
 </div>
 </div>
 </div>
