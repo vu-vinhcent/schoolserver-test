@@ -1,11 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head>
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
   <title>Search</title>
 </head>
+<style>
+#card_div {
+  width: 300px;
+  height: 300px;
+  margin: 24px 0;
+  padding: 16px;
+  overflow-y: scroll;
+  float:left;
+  padding: 20px;
+}
+</style>
 <body style="background-color:#00233E">
   <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
     <h1>Public Information</h1>
@@ -24,40 +36,40 @@
   </div>
 
   <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
-    <h1>Results</h1>
 
-
-  <div style="margin: 0 auto;  padding:20px;">
+  <div style="margin: 0 auto;  padding:20px; overflow:auto;">
   {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
-  <div id="resultbox" style="margin:20px; display: inline-block;border-radius: 5px;  vertical-align:top;padding: 10px; background-color:white;">
+  <div id="card_div" style="">
+    <h4>
   {% if dict_item['name'] %}
-  Name: </td><td>{{dict_item['name']}}</br>
+  {{dict_item['name']}}</br>
   {% endif %}
-
+  </h4>
+  <p>
   {% if dict_item['dob'] %}
-  DOB: </td><td>{{dict_item['dob']}}</br>
+  <b>DOB: </b>{{dict_item['dob']}}</br>
   {% endif %}
 
   {% if dict_item['age'] %}
-  Age: </td><td>{{dict_item['age']}}</br>
+  <b>Age:</b> {{dict_item['age']}}</br>
   {% endif %}
 
   {% if dict_item['locations'] %}
-  Locations: </td><td>{{', '.join(dict_item['locations'])}}</br>
+  <b>Locations: </b>{{', '.join(dict_item['locations'])}}</br>
   {% endif %}
 
   {% if dict_item['marital_status'] %}
-  Marital Status: </td><td>{{dict_item['includes']['marital_status']}}</br>
+  <b>Marital Status:</b> {{dict_item['includes']['marital_status']}}</br>
   {% endif %}
 
   {% if dict_item['relatives'] %}
-  Relatives: </td><td>{{', '.join(dict_item['relatives'])}}</br>
+  <b>Relatives: </b>{{', '.join(dict_item['relatives'])}}</br>
   {% endif %}
 
   {% if dict_item['aliases' ] %}
-  Aliases: </td><td>{{', '.join(dict_item['aliases'])}}</br>
+  <b>Aliases: </b>{{', '.join(dict_item['aliases'])}}</br>
   {% endif %}
-
+  </p>
   </div>
   {% endfor %}
 </div>
