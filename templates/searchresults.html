@@ -1,97 +1,84 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head>
-  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-  <title>Search</title>
-</head>
-<style>
-#card_div {
-  width: 300px;
-  height: 200px;
-  margin: 5px;
-  margin-left:10px;
-  padding: 5px;
-  overflow-y: scroll;
-  float:left;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-
-}
-
-#card_div:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-</style>
-<body style="background-color:#00233E">
-  <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
-    <h1>Public Information</h1>
-    There is a shocking amount of information publicly available. Knowing someone's name and location
-    is often all you need to find specific details about someone. Type your first and last name into the
-    form below to see if we can find information about you.
-    <form style="width:20%; padding:20px; margin-left:auto; margin-right:auto;" method="POST">
-      <fieldset class="form-group">
-        <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
-      </fieldset>
-      <fieldset class="form-group">
-        <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
-      </fieldset>
-      <input id="sub" class="btn btn-default" value="Submit" type="submit"></form>
-    </form>
-  </div>
-
-  <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
-
-  <div style="margin: 0 auto;  padding:20px; overflow:auto;">
-  {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
-  <div id="card_div" style="">
-    <h4>
-  {% if dict_item['name'] %}
-  {{dict_item['name']}}</br>
-  {% endif %}
-  </h4>
-  <p>
-  {% if dict_item['dob'] %}
-  <b>DOB: </b>{{dict_item['dob']}}</br>
-  {% endif %}
-
-  {% if dict_item['age'] %}
-  <b>Age:</b> {{dict_item['age']}}</br>
-  {% endif %}
-
-  {% if dict_item['locations'] %}
-  <b>Locations: </b>{{', '.join(dict_item['locations'])}}</br>
-  {% endif %}
-
-  {% if dict_item['marital_status'] %}
-  <b>Marital Status:</b> {{dict_item['includes']['marital_status']}}</br>
-  {% endif %}
-
-  {% if dict_item['relatives'] %}
-  <b>Relatives: </b>{{', '.join(dict_item['relatives'])}}</br>
-  {% endif %}
-
-  {% if dict_item['aliases' ] %}
-  <b>Aliases: </b>{{', '.join(dict_item['aliases'])}}</br>
-  {% endif %}
-  </p>
-  </div>
-  {% endfor %}
-</div>
-</div>
-  <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
-    <h1>Conclusion</h1>
-    Did you find any information that resembled yourself? Many people upload private information to social
-    networking sites. This information can be used in a social engineering attack to impersonate you and gain access
-    to your personal accounts. There are sites that aggregate publicly available information such as:
-     <a href="http://www.spokeo.com/">spokeo</a> and <a href="https://pipl.com/">pipl</a>.
-  </div>
-
-
-</div>
-</div>
-</div>
-</body>
+<html>
+   <head>
+      <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+      <title>Search</title>
+   </head>
+   <style>
+      #card_div {
+      width: 300px;
+      height: 200px;
+      margin: 5px;
+      margin-left:10px;
+      padding: 5px;
+      overflow-y: scroll;
+      float:left;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      #card_div:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+   </style>
+   <body style="background-color:#00233E">
+      <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
+         <h1>Public Information</h1>
+         There is a shocking amount of information publicly available. Knowing someone's name and location
+         is often all you need to find specific details about someone. Type your first and last name into the
+         form below to see if we can find information about you.
+         <form style="width:20%; padding:20px; margin-left:auto; margin-right:auto;" method="POST">
+            <fieldset class="form-group">
+               <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
+            </fieldset>
+            <fieldset class="form-group">
+               <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
+            </fieldset>
+            <input id="sub" class="btn btn-default" value="Submit" type="submit">
+         </form>
+         </form>
+      </div>
+      <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
+         <div style="margin: 0 auto;  padding:20px; overflow:auto;">
+            {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
+            <div id="card_div" style="">
+               <h4>
+                  {% if dict_item['name'] %}
+                  {{dict_item['name']}}</br>
+                  {% endif %}
+               </h4>
+               <p>
+                  {% if dict_item['dob'] %}
+                  <b>DOB: </b>{{dict_item['dob']}}</br>
+                  {% endif %}
+                  {% if dict_item['age'] %}
+                  <b>Age:</b> {{dict_item['age']}}</br>
+                  {% endif %}
+                  {% if dict_item['locations'] %}
+                  <b>Locations: </b>{{', '.join(dict_item['locations'])}}</br>
+                  {% endif %}
+                  {% if dict_item['marital_status'] %}
+                  <b>Marital Status:</b> {{dict_item['includes']['marital_status']}}</br>
+                  {% endif %}
+                  {% if dict_item['relatives'] %}
+                  <b>Relatives: </b>{{', '.join(dict_item['relatives'])}}</br>
+                  {% endif %}
+                  {% if dict_item['aliases' ] %}
+                  <b>Aliases: </b>{{', '.join(dict_item['aliases'])}}</br>
+                  {% endif %}
+               </p>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+      <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
+         <h1>Conclusion</h1>
+         Did you find any information that resembled yourself? Many people upload private information to social
+         networking sites. This information can be used in a social engineering attack to impersonate you and gain access
+         to your personal accounts. There are sites that aggregate publicly available information such as:
+         <a href="http://www.spokeo.com/">spokeo</a> and <a href="https://pipl.com/">pipl</a>.
+      </div>
+   </body>
 </html>
