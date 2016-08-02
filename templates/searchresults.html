@@ -23,8 +23,8 @@
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
    </style>
-   <body style="background-color:#00233E">
-      <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
+   <body style="">
+      <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white; outline-style: solid; outline-color: grey; outline-width: 1px;">
          <h1>Public Information</h1>
          There is a shocking amount of information publicly available. Knowing someone's name and location
          is often all you need to find specific details about someone. Type your first and last name into the
@@ -40,8 +40,8 @@
          </form>
          </form>
       </div>
-      <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
-         <div style="margin: 0 auto;  padding:20px; overflow:auto;">
+      <div style="margin:20px;border-radius: 5px; padding: 10px; outline-style: solid; outline-color: grey; outline-width: 1px;">
+         <div style="margin: 0 auto;  padding:10px; overflow:auto;">
             {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
             <div id="card_div" style="">
                <h4>
@@ -70,10 +70,12 @@
                   {% endif %}
                </p>
             </div>
+            {% else %}
+            <h1>No data found</h1>
             {% endfor %}
          </div>
       </div>
-      <div style="margin:20px;border-radius: 5px; padding: 10px; background-color:white;">
+      <div style="margin:20px;border-radius: 5px; padding: 10px; outline-style: solid; outline-color: grey; outline-width: 1px;">
          <h1>Conclusion</h1>
          Did you find any information that resembled yourself? Many people upload private information to social
          networking sites. This information can be used in a social engineering attack to impersonate you and gain access
