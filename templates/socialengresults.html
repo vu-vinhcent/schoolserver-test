@@ -1,0 +1,251 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Cyber Security Awareness Module </title>
+    <!-- Core CSS -->
+    <link type="text/css" rel="stylesheet" href="static/css/csam.css">
+    <!-- Roboto -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="apple-touch-icon" sizes="76x76" href="static/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="static/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="static/images/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="static/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="shortcut icon" href="static/images/favicons/favicon.ico">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <style>
+       #card_div {
+       width: 300px;
+       height: 200px;
+       margin: 5px;
+       margin-left:10px;
+       padding: 5px;
+       overflow-y: scroll;
+       float:left;
+       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+       }
+       #card_div:hover {
+       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+       }
+    </style>
+</head>
+
+<body>
+    <header class="navbar navbar-right navbar-full navbar-light" role="banner">
+        <div class="clearfix">
+            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2"> &#9776; </button>
+        </div>
+        <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
+            <nav class="nav navbar-nav">
+
+                <div class="pull-xs-left">
+                    <a class="nav-item nav-link" href="{{ url_for('index') }}"> Home </a>
+                </div>
+
+                <div class="pull-xs-right">
+                    <a class="nav-item nav-link" href="{{ url_for('passwords') }}"> Passwords </a>
+                    <a class="nav-item nav-link active" href="{{ url_for('social_eng') }}"> Social Engineering </a>
+                    <a class="nav-item nav-link" href="{{ url_for('index') }}"> Browser Security </a>
+                    <a class="nav-item nav-link" href="{{ url_for('index') }}"> Mobile Security </a>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-fluid hidden-md-up p-x-0">
+        <div class="row m-t-2">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-block text-xs-center">
+                        <h3> Unfortunately, this content is unable to be viewed on this resolution. Please view it on a computer or change the orientation of your tablet. </h3> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main" class="container-fluid hidden-sm-down">
+        <div class="row">
+            <div class="jumbotron jumbotron-fluid col-md-12">
+                <div class="container">
+                    <h1 class="display-3"> Social Engineering </h1>
+                    <h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4> </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 container-fluid">
+                <div class="card card-block">
+                    <h3 id="complexity" class="card-title"> Phishing and You </h3>
+                    <hr>
+                    <h5> What red flags do you find in the following email? </h5> </div>
+                <div class="card card-block email">
+
+                    <p class="email-hover" data-toggle="popover" data-placement="bottom"  data-content="This is suspicious because it is.">
+                        To: a_student@columbusstate.edu <br>
+                        From: "Barrister. John Park" &lt;dprasad@finacier.com&gt; <br>
+                        Subject: Good afternoon
+                    </p>
+
+                    <hr>
+
+                    <p class="email-hover" id="p2"> Good day, </p>
+
+                    <p class="email-hover" id="p3"> Hope all is well with you and your family. <br>
+
+                        I am Barrister.. John Park/ BCom, CA, MA (Hons) and Ph D, personal Attorney/Sole Executor Auditing and accounting Department of Banco Santander, S.A (Santander Private Banking). United Kingdom. I have emailed you earlier on without any response from you. On my first email I mentioned about my late client whose relatives I cannot get in touch with. But both of you have the same last name so it will be very easy to present you as his official next of kin since he didn't have a WILL &amp; TESTAMENT. I want you to handle this business transaction with me if chance to do international business. </p>
+
+                    <p class="email-hover" id="p4"> We have opportunity to claim and inherit the sum of US$8.5 Million USD without any trouble, from a dormant account which remains unclaimed since 11 years the owner died. This is a U.S Dollar’s account and the beneficiary died without trace of his family to claim the fund and no Next of Kin. </p>
+
+                    <p class="email-hover" id="p5"> If you are interested you do let me know so that I can give you comprehensive details on what we are to do since I can confer your legal rights of claim as the executor. FIND ATTACHED OF MY PASSPORT ID COPY FOR YOUR PROMPT PERUSAL. </p>
+
+                    <p class="email-hover" id="p6" data-toggle="popover" data-placement="bottom" data-content="This is too."> You can reach me directly on my mobile number and my email address;
+                        <br> Email address: park_john34@yahoo.ie
+                        <br> Direct Number: +44 7937025283
+                    </p>
+
+                    <hr>
+
+                    <p class="email-hover" id="p7" data-toggle="popover" data-placement="bottom" data-content="This is very suspicious."> Best regards,
+                        <br> Barrister. John Park/ BCom, CA, MA (Hons) and Ph D
+                        <br> Personal Attorney/Sole Executor/ Auditing and accounting Department Banco
+                        <br> Santander, S.A (Santander Private Banking). United Kingdom
+                        <br> +44 7937025283
+                    </p>
+
+                    <button id="clickClick"> Click to do something. </button>
+                </div>
+
+                <div class="card card-block">
+                    <h5> What is phishing? </h5>
+                    <p> A malicious entity contacts you, masquerading as a legitimate business and asks for information, directs you to a false website that tries to obtain your information, or otherwise tries to exploit you. </p>
+                    <h5> Phishing Warning Signs </h5>
+                    <ul>
+                        <li> Requests for personal information </li>
+                        <li> Generic greeting </li>
+                        <li> Urgency </li>
+                        <li> False links </li>
+                    </ul>
+                </div>
+
+                <div class="card card-block">
+                    <h5> Fake Websites </h5>
+                    <p> Phishing emails can take you to fake websites that are designed to look like legitimate websites. </p>
+
+                    <br>
+
+                    <p> Click on the image below to switch between two websites. Which one is real? </p>
+                    <p>
+                        <div class="form-check">
+                            <label class="form-check-lavel">
+                                <input class="form-check-input" type="radio" name="pickImages" id="image1-option" value="option1">
+                                Image1 is real.
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-lavel">
+                                <input class="form-check-input" type="radio" name="pickImages" id="image2-option" value="option2">
+                                Image2 is real.
+                            </label>
+                        </div>
+                    </p>
+
+                    <p>
+                        <div class="img-container">
+                            <img id="image1" class="top" src="static/images/image1.jpg" width=100%></img>
+                            <img id="image2" class="bottom" src="static/images/image2.jpg" width=100%></img>
+                        </div>
+                    </p>
+
+
+                </div>
+
+                <div class="card card-block">
+                   <h1>Public Information</h1>
+                   <p>
+                   Disclosing personal information on the internet can have devastating effects. Social networks can provide attackers
+                   with information such as full name, DOB, hometown, relationship information, education, graduation dates, pet names,
+                   interests, hobbies, and affiliations. This information can be used in a spear phishing attack to gain further
+                   information about a target, as well as crafting targeted password attacks.
+                   <br/>
+                   <br/>
+                   There is a shocking amount of information publicly available. Knowing someone's name and location
+                   is often all you need to find specific details about someone. Type your first and last name into the
+                   form below to see if we can find information about you.
+                  </p>
+
+                   <form method="POST">
+                      <fieldset class="form-group">
+                         <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
+                      </fieldset>
+                      <fieldset class="form-group">
+                         <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
+                      </fieldset>
+                      <input id="sub" class="btn btn-default" value="Submit" type="submit">
+                   </form>
+
+
+                   <div style="card-block">
+                      <div style="margin: 0 auto;  padding:10px; overflow:auto;">
+                         {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
+                         <div id="card_div">
+                            <h4>
+                               {% if dict_item['name'] %}
+                               {{dict_item['name']}}</br>
+                               {% endif %}
+                            </h4>
+                            <p>
+                               {% if dict_item['dob'] %}
+                               <b>DOB: </b>{{dict_item['dob']}}</br>
+                               {% endif %}
+                               {% if dict_item['age'] %}
+                               <b>Age:</b> {{dict_item['age']}}</br>
+                               {% endif %}
+                               {% if dict_item['locations'] %}
+                               <b>Locations: </b>{{', '.join(dict_item['locations'])}}</br>
+                               {% endif %}
+                               {% if dict_item['marital_status'] %}
+                               <b>Marital Status:</b> {{dict_item['includes']['marital_status']}}</br>
+                               {% endif %}
+                               {% if dict_item['relatives'] %}
+                               <b>Relatives: </b>{{', '.join(dict_item['relatives'])}}</br>
+                               {% endif %}
+                               {% if dict_item['aliases' ] %}
+                               <b>Aliases: </b>{{', '.join(dict_item['aliases'])}}</br>
+                               {% endif %}
+                            </p>
+                         </div>
+                         {% else %}
+                         <h1>No data found</h1>
+                         {% endfor %}
+                      </div>
+                   </div>
+                </div>
+
+
+
+
+
+                <div class="card card-block no-border">
+                    <a id="se-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('index') }}" role="button"> Start a new module! </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="static/js/tether.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/csam.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Cyber Security Awareness Module </title>
+    <!-- Core CSS -->
+    <link type="text/css" rel="stylesheet" href="static/css/csam.css">
+    <!-- Roboto -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="apple-touch-icon" sizes="76x76" href="static/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="static/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="static/images/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="static/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="shortcut icon" href="static/images/favicons/favicon.ico">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body onload="checkProgress()">
+    <header class="navbar navbar-right navbar-full navbar-light" role="banner">
+        <div class="clearfix">
+            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2"> &#9776; </button>
+        </div>
+        <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
+            <nav class="nav navbar-nav">
+
+                <div class="pull-xs-left">
+                    <a class="nav-item nav-link active" href="{{ url_for('index') }}"> Home </a>
+                </div>
+
+                <div class="pull-xs-right">
+                    <a class="nav-item nav-link" href="{{ url_for('passwords') }}"> Passwords </a>
+                    <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
+                    <a class="nav-item nav-link" href="{{ url_for('index') }}"> Browser Security </a>
+                    <a class="nav-item nav-link" href="{{ url_for('index') }}"> Mobile Security </a>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-fluid hidden-md-up p-x-0">
+        <div class="row m-t-2">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-block text-xs-center">
+                        <h3> Unfortunately, this content is unable to be viewed on this resolution. Please view it on a computer or change the orientation of your tablet. </h3> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid hidden-sm-down">
+        <div class="row">
+            <div class="jumbotron jumbotron-fluid col-md-12 m-b-1">
+                <div class="container">
+                    <h1 class="display-3"> Cybersecurity Awareness </h1>
+                    <h4 class="lead"> Learn about passwords, protect yourself from social engineering, and get familiar with the basics of web security! </h4> </div>
+            </div>
+        </div>
+        <div class="row" style="position: relative;">
+            <div class="container-fluid col-md-offset-1 col-md-10">
+                <div class="row card-deck m-y-1">
+
+                    <div id="p-card" class="card card-link transition">
+                        <a href="{{ url_for('passwords') }}">
+                            <div class="card-block">
+                                <h4 id="p-title" class="card-title transition"> Passwords </h4>
+                            </div>
+
+                            <img src="static/images/image.svg" width="100%"></img>
+
+                            <div class="card-block">
+                                <p> Think of how many passwords you use on a daily basis. Now think about what could happen if someone else had them. </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="se-card" class="card card-link transition">
+                        <a href="{{ url_for('social_eng') }}">
+                            <div class="card-block transition">
+                                <h4 id="se-title" class="card-title"> Social Engineering </h4>
+                            </div>
+
+                                <img src="static/images/image.svg" width="100%"></img>
+
+                            <div class="card-block">
+                                <p> Computers are only as secure as their users are. You are the biggest vulnerability. </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="bs-card" class="card card-link transition">
+                        <a href="{{ url_for('index') }}">
+                            <img class="card-img-top" src="static/images/image.svg" width="100%"></img>
+
+                            <div class="card-block transition">
+                                <h4 id="bs-title" class="card-title"> Browser Security </h4>
+                                <p> A securely configured browser is the first line of defence. </p>
+                            </div>
+
+
+                        </a>
+                    </div>
+
+                    <div id="ms-card" class="card card-link transition">
+                        <a href="{{ url_for('index') }}">
+                            <img class="card-img-top" src="static/images/image.svg" width="100%"></img>
+
+                            <div class="card-block transition">
+                                <h4 id="ms-title" class="card-title"> Mobile Security </h4>
+                            </div>
+
+                            <div class="card-block transition">
+                                <p> Description for module. </p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="static/js/csam.js"></script>
+</body>
+
+</html>

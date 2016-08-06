@@ -39,6 +39,7 @@ def query_person(first, last):
 
 application = Flask(__name__)
 
+'''
 @application.route('/', methods=["POST", "GET"])
 def search():
 	if request.method == "GET":
@@ -47,6 +48,28 @@ def search():
 		first = request.form["firstname"].split()[0].capitalize()
 		last = request.form["lastname"].split()[0].capitalize()
 		return render_template('searchresults.html', data=query_person(first, last))
+'''
+
+@application.route('/', methods=["GET"])
+def index():
+    return render_template('index.html')
+
+@application.route('/passwords', methods=["GET"])
+def passwords():
+    return render_template('passwords.html')
+
+@application.route('/social_engineering', methods=["POST", "GET"])
+def social_eng():
+    if request.method == "GET":
+		return render_template('socialeng.html')
+    if request.method == "POST":
+        first = request.form["firstname"].split()[0].capitalize()
+        last = request.form["lastname"].split()[0].capitalize()
+        return render_template('socialengresults.html', data=query_person(first, last))
+
+@application.route('/passwords_quiz', methods=["GET"])
+def passwords_quiz():
+    return render_template('passwords-quiz.html')
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0', debug=True)
