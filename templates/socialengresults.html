@@ -23,7 +23,7 @@
 
     <style>
        #card_div {
-       width: 300px;
+       width: 330px;
        height: 200px;
        margin: 5px;
        margin-left:10px;
@@ -166,9 +166,9 @@
 
 
                 </div>
-
+                <a name="public_information"></a>
                 <div class="card card-block">
-                   <h1>Public Information</h1>
+                   <h5>Public Information</h5>
                    <p>
                    Disclosing personal information on the internet can have devastating effects. Social networks can provide attackers
                    with information such as full name, DOB, hometown, relationship information, education, graduation dates, pet names,
@@ -181,15 +181,13 @@
                    form below to see if we can find information about you.
                   </p>
 
-                   <form method="POST">
-                      <fieldset class="form-group">
-                         <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
-                      </fieldset>
-                      <fieldset class="form-group">
-                         <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
-                      </fieldset>
-                      <input id="sub" class="btn btn-default" value="Submit" type="submit">
-                   </form>
+                  <form method="POST">
+                     <fieldset class="form-group" style="padding-bottom:10px;">
+                        <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
+                        <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
+                     </fieldset>
+                     <input id="clickClick" value="Submit" type="submit">
+                  </form>
 
 
                    <div style="card-block">
@@ -229,10 +227,6 @@
                    </div>
                 </div>
 
-
-
-
-
                 <div class="card card-block no-border">
                     <a id="se-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('index') }}" role="button"> Start a new module! </a>
                 </div>
@@ -243,6 +237,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script> $(function(){ window.location.hash = "public_information"; }); </script>
     <script src="static/js/tether.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
     <script src="static/js/csam.js"></script>

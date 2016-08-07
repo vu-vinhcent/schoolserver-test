@@ -39,17 +39,6 @@ def query_person(first, last):
 
 application = Flask(__name__)
 
-'''
-@application.route('/', methods=["POST", "GET"])
-def search():
-	if request.method == "GET":
-		return render_template('search.html')
-	if request.method == "POST":
-		first = request.form["firstname"].split()[0].capitalize()
-		last = request.form["lastname"].split()[0].capitalize()
-		return render_template('searchresults.html', data=query_person(first, last))
-'''
-
 @application.route('/', methods=["GET"])
 def index():
     return render_template('index.html')
