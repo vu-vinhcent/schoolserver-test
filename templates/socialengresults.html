@@ -168,15 +168,21 @@
                 </div>
                 <a name="public_information"></a>
                 <div class="card card-block">
-                   <h5>Public Information</h5>
+                   <h5>Privacy</h5>
                    <p>
                    Disclosing personal information on the internet can have devastating effects. Social networks can provide attackers
                    with information such as full name, DOB, hometown, relationship information, education, graduation dates, pet names,
                    interests, hobbies, and affiliations. This information can be used in a spear phishing attack to gain further
                    information about a target, as well as crafting targeted password attacks.
-                   <br/>
-                   <br/>
-                   There is a shocking amount of information publicly available. Knowing someone's name and location
+                   <br/><br/>
+                   Some tips to keep your information safe and out of the hands of attackers:
+                   <ul>
+                     <li>Be mindful of how much personal information you share on social networks.</li>
+                     <li>Dispose of old computers and phones (any device with data) securely.</li>
+                     <li>For password security verification questions, us a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
+                   </ul>
+
+                   There is a shocking amount of information available online. Knowing someone's name and location
                    is often all you need to find specific details about someone. Type your first and last name into the
                    form below to see if we can find information about you.
                   </p>
@@ -189,7 +195,7 @@
                      <input id="clickClick" value="Submit" type="submit">
                   </form>
 
-
+                  <a name="results"></a>
                    <div style="card-block">
                       <div style="margin: 0 auto;  padding:10px; overflow:auto;">
                          {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
@@ -237,7 +243,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script> $(function(){ window.location.hash = "public_information"; }); </script>
+    <script> $(function(){ window.location.hash = "results"; }); </script>
     <script src="static/js/tether.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
     <script src="static/js/csam.js"></script>

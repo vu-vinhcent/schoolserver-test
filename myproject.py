@@ -56,9 +56,29 @@ def social_eng():
         last = request.form["lastname"].split()[0].capitalize()
         return render_template('socialengresults.html', data=query_person(first, last))
 
+@application.route('/mobile', methods=["GET"])
+def mobile():
+    return render_template('mobile.html')
+
+@application.route('/browser', methods=["GET"])
+def browser():
+    return render_template('browser.html')
+
 @application.route('/passwords_quiz', methods=["GET"])
 def passwords_quiz():
     return render_template('passwords-quiz.html')
+
+@application.route('/social_engineering_quiz', methods=["GET"])
+def social_engineering_quiz():
+    return render_template('socialengineering-quiz.html')
+
+@application.route('/mobile_quiz', methods=["GET"])
+def mobile_quiz():
+    return render_template('mobile-quiz.html')
+
+@application.route('/browser_quiz', methods=["GET"])
+def browser_quiz():
+    return render_template('browser-quiz.html')
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0', debug=True)
