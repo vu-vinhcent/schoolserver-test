@@ -35,10 +35,10 @@
                 </div>
 
                 <div class="pull-xs-right">
-                    <a class="nav-item nav-link active" href="{{ url_for('passwords') }}"> Passwords </a>
+                    <a class="nav-item nav-link" href="{{ url_for('passwords') }}"> Passwords </a>
                     <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
-                    <a class="nav-item nav-link" href="{{ url_for('index') }}"> Browser Security </a>
-                    <a class="nav-item nav-link" href="{{ url_for('index') }}"> Mobile Security </a>
+                    <a class="nav-item nav-link active" href="{{ url_for('browser') }}"> Browser Security </a>
+                    <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
                 </div>
 
             </nav>
@@ -60,14 +60,27 @@
         <div class="row">
             <div class="jumbotron jumbotron-fluid col-md-12">
                 <div class="container">
-                    <h1 class="display-3"> Passwords </h1>
+                    <h1 class="display-3"> Mobile Security </h1>
                     <h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4>
                 </div>
             </div>
         </div>
-        
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 container-fluid">
+
+
+
+
+                <div class="card card-block no-border">
+                    <a id="bs-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('browser_quiz') }}" role="button"> Take the quiz! </a>
+                </div>
+            </div>
+        </div>
+
 
     </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="static/js/csam.js"></script>

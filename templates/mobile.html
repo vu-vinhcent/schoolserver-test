@@ -35,10 +35,10 @@
                 </div>
 
                 <div class="pull-xs-right">
-                    <a class="nav-item nav-link active" href="{{ url_for('passwords') }}"> Passwords </a>
+                    <a class="nav-item nav-link " href="{{ url_for('passwords') }}"> Passwords </a>
                     <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
-                    <a class="nav-item nav-link" href="{{ url_for('index') }}"> Browser Security </a>
-                    <a class="nav-item nav-link" href="{{ url_for('index') }}"> Mobile Security </a>
+                    <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
+                    <a class="nav-item nav-link active" href="{{ url_for('mobile') }}"> Mobile Security </a>
                 </div>
 
             </nav>
@@ -113,7 +113,12 @@
                     use to setup rogue access points for the sole purpose of harvesting
                     information: <a href="https://www.wifipineapple.com/">https://www.wifipineapple.com/</a>.
                   </p>
+                  <div class="embed-responsive m-y-2">
                   <iframe width="420" height="315" src="https://www.youtube.com/embed/T6j0dLZkXsA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                </div>
+                <div class="card card-block no-border">
+                    <a id="ms-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('mobile_quiz') }}" role="button"> Take the quiz! </a>
                 </div>
             </div>
         </div>
