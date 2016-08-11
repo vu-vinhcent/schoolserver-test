@@ -68,23 +68,37 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1 container-fluid">
                 <div class="card card-block no-border">
-                    <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('passwords') }}" role="button"> I'm not ready! Take me back to the module! </a>
+                    <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('browser') }}" role="button"> I'm not ready! Take me back to the module! </a>
                 </div>
 
                 <div class="card card-block">
-                    <h5> 1. This is a question? </h5>
+                    <h5> Which of these can a user disable or  restrict access to on a browser? </h5>
 
                     <div class="form-check">
                       <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="question1" id="q1a1" value="option1">
-                        First answer.
+                        Cookies
                       </label>
                     </div>
 
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="question1" id="q1a1" value="option2">
-                        Second answer.
+                        <input class="form-check-input" type="radio" name="question1" id="q1a2" value="option2">
+                        Javascript
+                      </label>
+                    </div>
+
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="question1" id="q1a3" value="option3">
+                        Both of the above
+                      </label>
+                    </div>
+
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="question1" id="q1a4" value="option4">
+                        None of the above
                       </label>
                     </div>
 

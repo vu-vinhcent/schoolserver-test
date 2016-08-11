@@ -68,23 +68,23 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1 container-fluid">
                 <div class="card card-block no-border">
-                    <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('passwords') }}" role="button"> I'm not ready! Take me back to the module! </a>
+                    <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('social_eng') }}" role="button"> I'm not ready! Take me back to the module! </a>
                 </div>
 
                 <div class="card card-block">
-                    <h5> 1. This is a question? </h5>
+                    <h5> 1. How would you distinguish a real website from a fake one? </h5>
 
                     <div class="form-check">
                       <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="question1" id="q1a1" value="option1">
-                        First answer.
+                        Search for the word “fake” on the site
                       </label>
                     </div>
 
                     <div class="form-check">
                       <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="question1" id="q1a1" value="option2">
-                        Second answer.
+                        Check the URL
                       </label>
                     </div>
 
@@ -96,16 +96,33 @@
                     <div class="form-check">
                       <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="question2" id="q2a1" value="option1">
-                        First answer.
+                        The email contains personal information such as last 4 digits of my social security number
                       </label>
                     </div>
 
                     <div class="form-check">
                       <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="question2" id="q2a2" value="option2">
-                        Second answer.
+                        The email directs me to a website to enter my credentials
                       </label>
                     </div>
+
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="question2" id="q2a3" value="option3">
+                        Both of the above
+                      </label>
+                    </div>
+
+
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="question2" id="q2a4" value="option4">
+                        None of the above
+                      </label>
+                    </div>
+
+
                 </div>
 
                 <div class="card card-block no-border">
