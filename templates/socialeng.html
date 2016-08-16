@@ -21,7 +21,6 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 </head>
-
 <body>
     <header class="navbar navbar-right navbar-full navbar-light" role="banner">
         <div class="clearfix">
@@ -29,22 +28,11 @@
         </div>
         <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
             <nav class="nav navbar-nav">
-
-                <div class="pull-xs-left">
-                    <a class="nav-item nav-link" href="{{ url_for('index') }}"> Home </a>
-                </div>
-
-                <div class="pull-xs-right">
-                    <a class="nav-item nav-link" href="{{ url_for('passwords') }}"> Passwords </a>
-                    <a class="nav-item nav-link active" href="{{ url_for('social_eng') }}"> Social Engineering </a>
-                    <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
-                    <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
-                </div>
-
+                <div class="pull-xs-left"> <a class="nav-item nav-link" href="{{ url_for('index') }}"> Home </a> </div>
+                <div class="pull-xs-right"> <a class="nav-item nav-link" href="{{ url_for('passwords') }}"> Passwords </a> <a class="nav-item nav-link active" href="{{ url_for('social_eng') }}"> Social Engineering </a> <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a> <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a> </div>
             </nav>
         </div>
     </header>
-
     <div class="container-fluid hidden-md-up p-x-0">
         <div class="row m-t-2">
             <div class="container-fluid">
@@ -55,7 +43,6 @@
             </div>
         </div>
     </div>
-
     <div id="main" class="container-fluid hidden-sm-down">
         <div class="row">
             <div class="jumbotron jumbotron-fluid col-md-12">
@@ -65,146 +52,159 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10 col-md-offset-1 container-fluid">
-                <div class="card card-block">
-                    <h3 id="complexity" class="card-title"> Phishing and You </h3>
-                    <hr>
-                    <h5> What red flags do you find in the following email? </h5> </div>
-                <div class="card card-block email">
-
-                    <p class="email-hover" data-toggle="popover" data-placement="bottom"  data-content="This is suspicious because it is.">
-                        To: a_student@columbusstate.edu <br>
-                        From: "Barrister. John Park" &lt;dprasad@finacier.com&gt; <br>
-                        Subject: Good afternoon
-                    </p>
-
-                    <hr>
-
-                    <p class="email-hover" id="p2"> Good day, </p>
-
-                    <p class="email-hover" id="p3"> Hope all is well with you and your family. <br>
-
-                        I am Barrister.. John Park/ BCom, CA, MA (Hons) and Ph D, personal Attorney/Sole Executor Auditing and accounting Department of Banco Santander, S.A (Santander Private Banking). United Kingdom. I have emailed you earlier on without any response from you. On my first email I mentioned about my late client whose relatives I cannot get in touch with. But both of you have the same last name so it will be very easy to present you as his official next of kin since he didn't have a WILL &amp; TESTAMENT. I want you to handle this business transaction with me if chance to do international business. </p>
-
-                    <p class="email-hover" id="p4"> We have opportunity to claim and inherit the sum of US$8.5 Million USD without any trouble, from a dormant account which remains unclaimed since 11 years the owner died. This is a U.S Dollar’s account and the beneficiary died without trace of his family to claim the fund and no Next of Kin. </p>
-
-                    <p class="email-hover" id="p5"> If you are interested you do let me know so that I can give you comprehensive details on what we are to do since I can confer your legal rights of claim as the executor. FIND ATTACHED OF MY PASSPORT ID COPY FOR YOUR PROMPT PERUSAL. </p>
-
-                    <p class="email-hover" id="p6" data-toggle="popover" data-placement="bottom" data-content="This is too."> You can reach me directly on my mobile number and my email address;
-                        <br> Email address: park_john34@yahoo.ie
-                        <br> Direct Number: +44 7937025283
-                    </p>
-
-                    <hr>
-
-                    <p class="email-hover" id="p7" data-toggle="popover" data-placement="bottom" data-content="This is very suspicious."> Best regards,
-                        <br> Barrister. John Park/ BCom, CA, MA (Hons) and Ph D
-                        <br> Personal Attorney/Sole Executor/ Auditing and accounting Department Banco
-                        <br> Santander, S.A (Santander Private Banking). United Kingdom
-                        <br> +44 7937025283
-                    </p>
-
-                    <button id="clickClick"> Click to do something. </button>
-                </div>
-
-                <div class="card card-block">
-                    <h5> What is phishing? </h5>
-                    <p> A malicious entity contacts you, masquerading as a legitimate business and asks for information, directs you to a false website that tries to obtain your information, or otherwise tries to exploit you. </p>
-                    <h5> Phishing Warning Signs </h5>
-                    <ul>
-                        <li> Requests for personal information </li>
-                        <li> Generic greeting </li>
-                        <li> Urgency </li>
-                        <li> False links </li>
-                    </ul>
-                </div>
-
-                <div class="card card-block">
-                    <h5> Fake Websites </h5>
-                    <p> Phishing emails can take you to fake websites that are designed to look like legitimate websites. </p>
-
-                    <br>
-
-                    <p> Click on the image below to switch between two websites. Which one is real? </p>
-                    <p>
-                        <div class="form-check">
-                            <label class="form-check-lavel">
-                                <input class="form-check-input" type="radio" name="pickImages" id="image1-option" value="option1">
-                                Image1 is real.
-                            </label>
+            <div class="container">
+                <div id="content-container" class="row">
+                    <div class="col-md-2">
+                        <div class="card card-block" id="sidebar">
+                            <nav>
+                                <ul id="sidebar-links" class="nav nav-pills nav-stacked">
+                                    <li class="nav-item"> <a class="nav-link" href="#phishing"> Phishing </a> </li>
+                                    <hr>
+                                    <li class="nav-item"> <a class="nav-link" href="#fakesites"> Fake Websites </a> </li>
+                                    <hr>
+                                    <li class="nav-item"> <a class="nav-link" href="#spearphishing"> Spear Phishing </a> </li>
+                                    <hr>
+                                    <li class="nav-item"> <a class="nav-link" href="#privacy"> Privacy </a> </li>
+                                </ul>
+                            </nav>
                         </div>
-                        <div class="form-check">
-                            <label class="form-check-lavel">
-                                <input class="form-check-input" type="radio" name="pickImages" id="image2-option" value="option2">
-                                Image2 is real.
-                            </label>
+                    </div>
+                    <div id="content" class="col-md-10">
+                        <div class="card card-block">
+                            <h3 id="phishing" class="card-title"> Phishing and You </h3>
+                            <hr>
+                            <h5> What red flags do you find in the following email? </h5> </div>
+                        <div class="card card-block email">
+                            <p class="email-hover" data-toggle="popover" data-placement="bottom" data-content="This is suspicious because it is."> To: a_student@columbusstate.edu
+                                <br> From: "Barrister. John Park" &lt;dprasad@finacier.com&gt;
+                                <br> Subject: Good afternoon </p>
+                            <hr>
+                            <p class="email-hover" id="p2"> Good day, </p>
+                            <p class="email-hover" id="p3"> Hope all is well with you and your family.
+                                <br> I am Barrister.. John Park/ BCom, CA, MA (Hons) and Ph D, personal Attorney/Sole Executor Auditing and accounting Department of Banco Santander, S.A (Santander Private Banking). United Kingdom. I have emailed you earlier on without any response from you. On my first email I mentioned about my late client whose relatives I cannot get in touch with. But both of you have the same last name so it will be very easy to present you as his official next of kin since he didn't have a WILL &amp; TESTAMENT. I want you to handle this business transaction with me if chance to do international business. </p>
+                            <p class="email-hover" id="p4"> We have opportunity to claim and inherit the sum of US$8.5 Million USD without any trouble, from a dormant account which remains unclaimed since 11 years the owner died. This is a U.S Dollar’s account and the beneficiary died without trace of his family to claim the fund and no Next of Kin. </p>
+                            <p class="email-hover" id="p5"> If you are interested you do let me know so that I can give you comprehensive details on what we are to do since I can confer your legal rights of claim as the executor. FIND ATTACHED OF MY PASSPORT ID COPY FOR YOUR PROMPT PERUSAL. </p>
+                            <p class="email-hover" id="p6" data-toggle="popover" data-placement="bottom" data-content="This is too."> You can reach me directly on my mobile number and my email address;
+                                <br> Email address: park_john34@yahoo.ie
+                                <br> Direct Number: +44 7937025283 </p>
+                            <hr>
+                            <p class="email-hover" id="p7" data-toggle="popover" data-placement="bottom" data-content="This is very suspicious."> Best regards,
+                                <br> Barrister. John Park/ BCom, CA, MA (Hons) and Ph D
+                                <br> Personal Attorney/Sole Executor/ Auditing and accounting Department Banco
+                                <br> Santander, S.A (Santander Private Banking). United Kingdom
+                                <br> +44 7937025283 </p>
+                            <button id="clickClick"> Click to do something. </button>
                         </div>
-                    </p>
-
-                    <p>
-                        <div class="img-container">
-                            <img id="image1" class="top" src="static/images/image1.jpg" width=100%></img>
-                            <img id="image2" class="bottom" src="static/images/image2.jpg" width=100%></img>
+                        <div class="card card-block">
+                            <h5> What is phishing? </h5>
+                            <p> A malicious entity contacts you, masquerading as a legitimate business and asks for information, directs you to a false website that tries to obtain your information, or otherwise tries to exploit you. </p>
+                            <h5> Phishing Warning Signs </h5>
+                            <ul>
+                                <li> Requests for personal information </li>
+                                <li> Generic greeting </li>
+                                <li> Urgency </li>
+                                <li> False links </li>
+                            </ul>
                         </div>
-                    </p>
+                        <div class="card card-block">
+                            <h5 id="fakesites"> Fake Websites </h5>
+                            <p> Phishing emails can take you to fake websites that are designed to look like legitimate websites. </p>
+                            <br>
+                            <p> Click on the image below to switch between two websites. Which one is real? </p>
+                            <p>
+                                <div class="form-check">
+                                    <label class="form-check-lavel">
+                                        <input class="form-check-input" type="radio" name="pickImages" id="image1-option" value="option1"> Image1 is real. </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-lavel">
+                                        <input class="form-check-input" type="radio" name="pickImages" id="image2-option" value="option2"> Image2 is real. </label>
+                                </div>
+                            </p>
+                            <p>
+                                <div class="img-container"> <img id="image1" class="top" src="static/images/image1.jpg" width=100%></img> <img id="image2" class="bottom" src="static/images/image2.jpg" width=100%></img>
+                                </div>
+                            </p>
+                        </div>
+                        <div class="card card-block">
+                            <h5> How do you identify fake websites? </h5>
+                            <ul class="real-list">
+                                <li> Check the URL! URLs are unique, so no two websites can have the same URL. However, <i>www.google.com</i> and <i>www.goog1e.com</i> can look a lot alike, especially at a glance.</li>
+                                <li> Check whether the website is using HTTPS or HTTP. Most websites that involve secure transactions or your personal information will use HTTPS. </li>
+                                <li> Sometimes, websites use special fonts, which cannot be easily replicated. Watch out for fonts that look out of place, like <span style="font-family: Times New Roman;"> this part of the sentence</span>.</li>
+                                <li> Obvious grammar errors are also a suspicious sign. Very rarely will there be grammar errors on genuine websites, especially ones for businesses. </li>
+                            </ul>
+                        </div>
+                        <div class="card card-block">
+                            <h5 id="spearphishing"> Spear Phishing </h5>
+                            <p>
+                              "Spear Phishing" is a specific type of phishing attack that appears to come from a trusted source. Attackers
+                              can use information they find online to impersonate someone that the victim trusts, increasing the chance of a successful attack.
+
+                            </p>
+                        </div>
+                        <div class="card card-block">
+                           <h5 id="privacy">Privacy</h5>
+                           <p>
+                           Disclosing personal information on the internet can have devastating effects. Social networks can provide attackers
+                           with information such as full name, DOB, hometown, relationship information, education, graduation dates, pet names,
+                           interests, hobbies, and affiliations. This information can be used in a spear phishing attack to gain further
+                           information about a target, as well as crafting targeted password attacks.
+                           <br/><br/>
 
 
+                           There is a shocking amount of information available online. Knowing someone's name and location
+                           is often all you need to find specific details about someone. Type your first and last name into the
+                           form below to see if we can find information about you.
+                          </p>
+
+                          <form method="POST">
+                             <fieldset class="form-group" style="padding-bottom:10px;">
+                                <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
+                                <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
+                             </fieldset>
+                             <input id="clickClick" value="Submit" type="submit">
+                          </form>
+
+                          Some tips to keep your information safe and out of the hands of attackers:
+                          <ul>
+                            <li>Be mindful of how much personal information you share on social networks.</li>
+                            <li>Dispose of old computers and phones (any device with data) securely.</li>
+                            <li>For password security verification questions, us a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
+                          </ul>
+                        </div>
+
+                        <div class="card card-block no-border"> <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('social_engineering_quiz') }}" role="button"> Take the quiz! </a> </div>
+                    </div>
                 </div>
-
-                <div class="card card-block">
-                    <h5> Spear Phishing </h5>
-                    <p>
-                      "Spear Phishing" is a specific type of phishing attack that appears to come from a trusted source. Attackers
-                      can use information they find online to impersonate someone that the victim trusts, increasing the chance of a successful attack.
-
-                    </p>
-                </div>
-
-                <div class="card card-block">
-                   <h5>Privacy</h5>
-                   <p>
-                   Disclosing personal information on the internet can have devastating effects. Social networks can provide attackers
-                   with information such as full name, DOB, hometown, relationship information, education, graduation dates, pet names,
-                   interests, hobbies, and affiliations. This information can be used in a spear phishing attack to gain further
-                   information about a target, as well as crafting targeted password attacks.
-                   <br/><br/>
-
-
-                   There is a shocking amount of information available online. Knowing someone's name and location
-                   is often all you need to find specific details about someone. Type your first and last name into the
-                   form below to see if we can find information about you.
-                  </p>
-
-                  <form method="POST">
-                     <fieldset class="form-group" style="padding-bottom:10px;">
-                        <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
-                        <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
-                     </fieldset>
-                     <input id="clickClick" value="Submit" type="submit">
-                  </form>
-                  
-                  Some tips to keep your information safe and out of the hands of attackers:
-                  <ul>
-                    <li>Be mindful of how much personal information you share on social networks.</li>
-                    <li>Dispose of old computers and phones (any device with data) securely.</li>
-                    <li>For password security verification questions, us a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
-                  </ul>
-                </div>
-
-
-                <div class="card card-block no-border">
-                    <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('social_engineering_quiz') }}" role="button"> Take the quiz! </a>
-                </div>
-
-
             </div>
         </div>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="static/js/tether.min.js"></script>
-    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static//js/tooltip.js"></script>
+    <script src="static/js/popover.js"></script>
+    <script src="static/js/util.js"></script>
+    <script src="static/js/scrollspy.js"></script>
+    <script src="static/js/jquery.scrollTo.min.js"></script>
     <script src="static/js/csam.js"></script>
+    <script>
+        $('body').scrollspy({
+            target: '#sidebar'
+            , offset: ($(window).height() * .15)
+        });
+        $(document).ready(function () {
+            $('a[href^="#"]').click(function (e) {
+                e.preventDefault();
+                $(window).stop(true).scrollTo(this.hash, {
+                    duration: 700
+                    , interrupt: true
+                    , offset: -50
+                    , easing: "swing"
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

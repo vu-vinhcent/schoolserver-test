@@ -64,72 +64,85 @@
                     <h4 class="lead"> Learn about passwords, protect yourself from social engineering, and get familiar with the basics of web security! </h4> </div>
             </div>
         </div>
-        <div class="row" style="position: relative;">
-            <div class="container-fluid col-md-offset-1 col-md-10">
-                <div class="row card-deck m-y-1">
-
+        <div class="container-fluid">
+            <div class="row flex-items-xs-center">
+                <div class="col-xl-6 col-lg-12">
                     <div id="p-card" class="card card-link transition">
                         <a href="{{ url_for('passwords') }}">
-                            <div class="card-block">
-                                <h4 id="p-title" class="card-title transition"> Passwords </h4>
+
+                            <div class="row">
+                                <div class="col-sm-4" style="position: relative; width: 100%;">
+                                    <img class="img-link" src="static/images/Password-security.jpg"></img>
+                                </div>
+
+                                <div class="col-sm-8 card-block">
+                                    <h4 id="p-title" class="transition"> Passwords </h4>
+                                    <p> Think of how many passwords you use on a daily basis. Now think about what could happen if someone else had them. </p>
+                                </div>
                             </div>
 
-                            <img src="static/images/image.svg" width="100%"></img>
-
-                            <div class="card-block">
-                                <p> Think of how many passwords you use on a daily basis. Now think about what could happen if someone else had them. </p>
-                            </div>
                         </a>
                     </div>
-
+                </div>
+                <div class="col-xl-6 col-lg-12">
                     <div id="se-card" class="card card-link transition">
                         <a href="{{ url_for('social_eng') }}">
-                            <div class="card-block transition">
-                                <h4 id="se-title" class="card-title"> Social Engineering </h4>
+
+                            <div class="row">
+                                <div class="col-sm-4" style="position: relative; width: 100%;">
+                                    <img class="img-link" src="static/images/social_engineering_dataroom_advice.jpg"></img>
+                                </div>
+
+                                <div class="col-sm-8 card-block">
+                                    <h4 id="se-title"> Social Engineering </h4>
+                                    <p> Computers are only as secure as their users are. You are the biggest vulnerability. </p>
+                                </div>
                             </div>
 
-                                <img src="static/images/image.svg" width="100%"></img>
-
-                            <div class="card-block">
-                                <p> Computers are only as secure as their users are. You are the biggest vulnerability. </p>
-                            </div>
                         </a>
                     </div>
-
+                </div>
+                <div class="col-xl-6 col-lg-12">
                     <div id="bs-card" class="card card-link transition">
                         <a href="{{ url_for('browser') }}">
-                            <img class="card-img-top" src="static/images/image.svg" width="100%"></img>
 
-                            <div class="card-block transition">
-                                <h4 id="bs-title" class="card-title"> Browser Security </h4>
-                                <p> A securely configured browser is the first line of defence. </p>
+                            <div class="row">
+                                <div class="col-sm-4" style="position: relative; width: 100%;">
+                                    <img class="img-link" src="static/images/browser-security-extensions.jpg"></img>
+                                </div>
+
+                                <div class="col-sm-8 card-block">
+                                    <h4 id="bs-title"> Browser Security </h4>
+                                    <p> A securely configured browser is the first line of defence. </p>
+                                </div>
                             </div>
-
 
                         </a>
                     </div>
-
+                </div>
+                <div class="col-xl-6 col-lg-12">
                     <div id="ms-card" class="card card-link transition">
-                        <a href="{{ url_for('mobile') }}">
-                            <img class="card-img-top" src="static/images/image.svg" width="100%"></img>
+                        <a href="{{ url_for('index') }}">
 
-                            <div class="card-block transition">
-                                <h4 id="ms-title" class="card-title"> Mobile Security </h4>
+                            <div class="row">
+                                <div class="col-sm-4" style="position: relative; width: 100%;">
+                                    <img class="img-link" src="static/images/mobile%20security.jpg"></img>
+                                </div>
+
+                                <div class="col-sm-8 card-block">
+                                    <h4 id="ms-title"> Mobile Security </h4>
+                                    <p> Description for module. </p>
+                                </div>
                             </div>
 
-                            <div class="card-block transition">
-                                <p> Description for module. </p>
-                            </div>
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="static/js/csam.js"></script>
+    <script src="assets/js/csam.js"></script>
 </body>
 
 </html>
