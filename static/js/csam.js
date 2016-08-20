@@ -155,7 +155,7 @@ function checkQuiz() {
 
     if (numCorrect == 2) {
         var part1 = '<a id="';
-        var part2 = '" class="btn btn-primary btn-lg next" href="index.html" role="button" onclick="checkQuestion(this)"> Start a new module! </a>';
+        var part2 = '" class="btn btn-primary btn-lg next" href="/" role="button" onclick="checkQuestion(this)"> Start a new module! </a>';
 
         if ($('title').text().indexOf('Password') >= 0) {
             $('.next').replaceWith(part1 + 'p' + part2);
@@ -178,19 +178,19 @@ function checkQuiz() {
 
         if ($('title').text().indexOf('Password') >= 0) {
             console.log(part3 + 'passwords.html' + part4);
-            $('.next').replaceWith(part3 + 'passwords.html' + part4);
+            $('.next').replaceWith(part3 + '/passwords' + part4);
         }
 
         if ($('title').text().indexOf('Browser') >= 0) {
-            $('.next').replaceWith(part3 + 'browsersec.html' + part4);
+            $('.next').replaceWith(part3 + '/browser' + part4);
         }
 
         if ($('title').text().indexOf('Social') >= 0) {
-            $('.next').replaceWith(part3 + 'socialeng.html' + part4);
+            $('.next').replaceWith(part3 + '/social_engineering' + part4);
         }
 
         if ($('title').text().indexOf('Mobile') >= 0) {
-            $('.next').replaceWith(part3 + 'mobilesec.html' + part4);
+            $('.next').replaceWith(part3 + '/mobile' + part4);
         }
     }
 }

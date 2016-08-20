@@ -4,45 +4,38 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Cyber Security Awareness Module </title>
-    <!-- Core CSS -->
+
+    <title> Mobile Security Quiz </title>
+
     <link type="text/css" rel="stylesheet" href="static/css/csam.css">
-    <!-- Roboto -->
+
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
     <link rel="apple-touch-icon" sizes="76x76" href="static/images/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicons/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/png" href="static/images/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="static/images/favicons/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="static/images/favicons/favicon-96x96.png" sizes="96x96">
     <link rel="shortcut icon" href="static/images/favicons/favicon.ico">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <![endif]-->
 </head>
 
 <body>
-    <header class="navbar navbar-right navbar-full navbar-light" role="banner">
-        <div class="clearfix">
-            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2"> &#9776; </button>
-        </div>
-        <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
-            <nav class="nav navbar-nav">
 
-                <div class="pull-xs-left">
-                    <a class="nav-item nav-link" href="{{ url_for('index') }}"> Home </a>
-                </div>
-
-                <div class="pull-xs-right">
-                    <a class="nav-item nav-link" href="{{ url_for('passwords') }}"> Passwords </a>
-                    <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
-                    <a class="nav-item nav-link active" href="{{ url_for('browser') }}"> Browser Security </a>
-                    <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
-                </div>
-
-            </nav>
-        </div>
+    <header class="navbar navbar-right navbar-full navbar-light hidden-sm-down" role="banner">
+        <nav class="nav navbar-nav">
+            <div class="pull-xs-left">
+                <a class="nav-item nav-link" href="{{ url_for('index') }}"> Home </a>
+            </div>
+            <div class="pull-xs-right">
+                <a class="nav-item nav-link" href="{{ url_for('passwords') }}"> Passwords </a>
+                <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
+                <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
+            </div>
+        </nav>
     </header>
 
     <div class="container-fluid hidden-md-up p-x-0">
@@ -69,55 +62,71 @@
             <div class="container">
                 <div class="card card-block no-border">
 
-                <div id="question1" class="card card-block">
-                    <div id='q1-check' class="question-space"> &nbsp; </div>
+                    <div id="question1" class="card card-block">
+                        <div id='q1-check' class="question-space"> &nbsp; </div>
 
-                    <h5> 1. Which of these can a user disable or restrict access to on a browser? </h5>
+                        <h5> 1. Which of these is true about smartphones? </h5>
 
-                    <div class="form-check indent">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="question1" id="q1a1" value="false">
-                        Wrong answer.
-                      </label>
+                        <div class="form-check indent">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="question1" id="q1a1" value="false"> Smartphones do not need antivirus software
+                            </label>
 
-                        <br>
+                            <br>
 
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="question1" id="q1a2" value="true">
-                        Right answer.
-                      </label>
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="question1" id="q1a2" value="false"> Attackers never target smartphones
+                            </label>
+
+                            <br>
+
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="question1" id="q1a3" value="false"> Both of the above
+                            </label>
+
+                            <br>
+
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="question1" id="q1a4" value="true"> None of the above
+                            </label>
+                        </div>
+
                     </div>
 
-                </div>
+                    <div id="question2" class="card card-block">
+                        <div id='q1-check' class="question-space"> &nbsp; </div>
 
-                <div class="card card-block">
-                    <div id='q2-check' class="question-space"> &nbsp; </div>
+                        <h5> 1. Which of these is true about third-party apps? </h5>
 
-                    <h5> 2. Which of these on a web browser indicate that the connection is encrypted? </h5>
+                        <div class="form-check indent">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="question2" id="q2a1" value="false"> Third-party apps are always safe
+                            </label>
 
-                    <div class="form-check indent">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="question2" id="q2a1" value="true">
-                        Right answer.
-                      </label>
+                            <br>
+
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="question2" id="q21a2" value="true"> Third-party apps are never safe
+                            </label>
+
+                            <br>
+
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="question2" id="q2a3" value="false"> Third-party apps are sometimes safe
+                            </label>
+
+                            <br>
+                        </div>
+
                     </div>
 
-                    <div class="form-check indent">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="question2" id="q2a2" value="false">
-                        Wrong answer.
-                      </label>
+                    <div class="form-check" style="text-align: center;">
+                        <button class="submit" onclick="checkQuiz()"> Submit! </button>
                     </div>
 
-                </div>
-
-                <div class="form-check" style="text-align: center;">
-                        <button class="submit" onclick="checkPW()"> Submit! </button>
-                </div>
-
-                <div class="card card-block no-border" style="text-align: center;">
-                    <a class="btn btn-primary btn-lg" href="{{ url_for('browser') }}" role="button"> Back to the module! </a>
-                    <a id="bs-button" class="btn btn-primary btn-lg" href="{{ url_for('index') }}" role="button"> Start a new module! </a>
+                    <div class="card card-block no-border" style="text-align: center;">
+                        <a class="next"></a>
+                    </div>
                 </div>
             </div>
         </div>

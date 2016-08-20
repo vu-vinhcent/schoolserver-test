@@ -4,53 +4,45 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Cyber Security Awareness Module </title>
-    <!-- Core CSS -->
+
+    <title> Mobile Security </title>
+
     <link type="text/css" rel="stylesheet" href="static/css/csam.css">
-    <!-- Roboto -->
+
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
     <link rel="apple-touch-icon" sizes="76x76" href="static/images/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicons/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/png" href="static/images/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="static/images/favicons/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="static/images/favicons/favicon-96x96.png" sizes="96x96">
     <link rel="shortcut icon" href="static/images/favicons/favicon.ico">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <![endif]-->
 </head>
 
-<body>
-    <header class="navbar navbar-right navbar-full navbar-light" role="banner">
-        <div class="clearfix">
-            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2"> &#9776; </button>
-        </div>
-        <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
-            <nav class="nav navbar-nav">
+<body data-spy="scroll" data-target="#sidebar">
 
-                <div class="pull-xs-left">
-                    <a class="nav-item nav-link" href="{{ url_for('index') }}"> Home </a>
-                </div>
-
-                <div class="pull-xs-right">
-                    <a class="nav-item nav-link " href="{{ url_for('passwords') }}"> Passwords </a>
-                    <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
-                    <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
-                    <a class="nav-item nav-link active" href="{{ url_for('mobile') }}"> Mobile Security </a>
-                </div>
-
-            </nav>
-        </div>
+    <header class="navbar navbar-right navbar-full navbar-light hidden-sm-down" role="banner">
+        <nav class="nav navbar-nav">
+            <div class="pull-xs-left">
+                <a class="nav-item nav-link" href="{{ url_for('index') }}"> Home </a>
+            </div>
+            <div class="pull-xs-right">
+                <a class="nav-item nav-link" href="{{ url_for('passwords') }}"> Passwords </a>
+                <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
+                <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
+                <a class="nav-item nav-link active" href="{{ url_for('mobile') }}"> Mobile Security </a>
+            </div>
+        </nav>
     </header>
 
     <div class="container-fluid hidden-md-up p-x-0">
-        <div class="row m-t-2">
-            <div class="container-fluid">
-                <div class="card">
-                    <div class="card-block text-xs-center">
-                        <h3> Unfortunately, this content is unable to be viewed on this resolution. Please view it on a computer or change the orientation of your tablet. </h3> </div>
+        <div class="row">
+            <div class="card">
+                <div class="card-block text-xs-center">
+                    <h3> Unfortunately, this content is unable to be viewed on this resolution. Please view it on a computer or change the orientation of your tablet. </h3>
                 </div>
             </div>
         </div>
@@ -67,67 +59,144 @@
         </div>
 
         <div class="row">
-            <div class="col-md-10 col-md-offset-1 container-fluid">
-                
-                <div class="card card-block">
-                  <h5>Side Loading Apps</h5>
-                  <p>
-                    Smartphones allow you to install applications from third party
-                     sources (somewhere other than the app store) through a process
-                     called “side loading”. Third-party apps are attractive because
-                     they offer more variety than what the app store can provide.
-                     Since these applications are not screened by the app store, it
-                     is possible for app developers to embed malware into their application.
-                  </p>
-                  <p>For more information check out this <a href="https://blog.malwarebytes.com/cybercrime/2014/04/sideloading-apps-is-a-dangerous-game/
-">link.</a></p>
-                </div>
-                <div class="card card-block">
-                  <h5>App Permissions</h5>
-                  <p>
-                    When installing an app you are presented with the types of
-                    permissions that the app requires. These permissions can include
-                     things such as gathering your location information, modifying your
-                     contacts, permission to send SMS messages on your behalf, etc.
-                     Make sure that the required permissions make sense. Research apps
-                     that exhibit suspicious permissions to verify legitimacy.
-                  </p>
-                </div>
-                <div class="card card-block">
-                  <h5>Unsecured Wifi</h5>
-                  <p>
-                    Unprotected Wifi networks, particularly in public places, can be dangerous.
-                    This is because you are connecting without knowing who else could be on the network.
-                     A malicious person can capture information, including credentials as they travel
-                     across the network.
-                  </p>
-                  <p>
-                    These sorts of attacks are mostly useful for harvesting
-                     unencrypted credentials, but just because a connection is
-                     encrypted does not necessarily mean it is safe.
-                  </p>
-                  <p>
-                    There are dedicated devices that attackers can
-                    use to setup rogue access points for the sole purpose of harvesting
-                    information: <a href="https://www.wifipineapple.com/">https://www.wifipineapple.com/</a>.
-                  </p>
-                  <div class="embed-responsive m-y-2">
-                  <iframe width="420" height="315" src="https://www.youtube.com/embed/T6j0dLZkXsA" frameborder="0" allowfullscreen></iframe>
-                </div>
-                </div>
-                <div class="card card-block no-border">
-                    <a id="ms-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('mobile_quiz') }}" role="button"> Take the quiz! </a>
+            <div class="container">
+                <div id="content-container" class="row">
+                    <div class="col-md-2">
+                        <div id="sidebar">
+                            <nav>
+                                <ul id="sidebar-links" class="nav nav-pills nav-stacked">
+                                    <li class="nav-item"> <a class="nav-link" href="#thirdparty"> Third-party Apps </a> </li>
+                                    <hr>
+                                    <li class="nav-item"> <a class="nav-link" href="#permissions"> App Permissions </a> </li>
+                                    <hr>
+                                    <li class="nav-item"> <a class="nav-link" href="#wifi"> Unsecured Wi-Fi </a> </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div id="content" class="col-md-10">
+                        <div id="thirdparty" class="card card-block">
+                            <h4 class="card-title"> Third-Party Apps </h4>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-4 col-lg-3 col-xl-3">
+                                    <image class="m-x-auto d-block" src="static/images/pokegoult.jpg"></image>
+                                </div>
+                                <div class="col-md-8 col-lg-9 col-xl-9 p-t-3">
+                                    <p>
+                                        Jack wanted to play Pokemon Go before it was released in the Google Play Store. He downloaded a version that was available online.
+                                    </p>
+                                    <p>
+                                        He couldn't find the app in the phone after installation. Instead, Jack found an app called "PI Network."
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row p-t-2">
+                                <div class="col-md-7 col-lg-8 col-xl-9 p-t-3">
+                                    <p> Curious, Jack opened it up. His phone froze immediately, and Jack was forced to shut his phone off by removing the battery. </p>
+
+                                    <p> The app was nowhere to be found, but nows ads pop up all the time. </p>
+                                </div>
+                                <div class="col-md-5 col-lg-4 col-xl-3">
+                                    <image class="m-x-auto d-block" src="static/images/badpoke.jpg"></image>
+                                </div>
+                            </div>
+                            <br>
+                            <p>
+                                Smartphones allow you to install applications from third-party sources through a process called <i>side-loading</i>. Third-party apps offer more variety and can sometimes provide earlier releases than an official app store. Official app stores screen their apps, making it less likely for developers to embed malware or adware into their app.
+                            </p>
+
+                            <div id="pw-video" class="embed-responsive embed-responsive-16by9 m-y-2">
+                                <p> Here is one incident that highlights the potential risks of using default passwords. </p>
+                                <iframe align="middle" class="embed-responsive-item" src="//www.youtube.com/embed/KCObM4PBTVk" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div id="permissions" class="card card-block">
+                            <h4 class="card-title"> App Permissions </h4>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-5 col-lg-4">
+                                    <image class="m-x-auto d-block" src="static/images/weather_permission.jpg"></image>
+                                </div>
+                                <div class="col-md-7 col-lg-8">
+                                    <p class="pull-md-left"> Have you ever downloaded an app that requested your permission to access your private data? </p>
+                                </div>
+                            </div>
+
+                            <div class="row p-t-2">
+                                <div class="col-md-12 col-lg-12 col-xl-5">
+                                    <p> When you install some apps, they ask for your permission to access your datas. These permissions can include anything from your location data to accessing your contacts. Some apps can even send text messages and calls.
+                                    </p>
+                                </div>
+                                <div class="col-md-12 col-lg-12 col-xl-7">
+                                    <image class="m-x-auto d-block" style="max-width: 100%;" src="static/images/permissions.jpg"></image>
+                                </div>
+                            </div>
+
+                            <div class="row p-t-2">
+                                <div class="col-md-12">
+                                    <p> Some apps can misuse your personal information. Here are some things that apps can access provided the right permissions: </p>
+                                    <ul>
+                                        <li> Names and phone numbers in your contact list. </li>
+                                        <li> Text message, emails, and files on your phone. </li>
+                                        <li> Location data, which can be used to determine where you live, work, or go to school. </li>
+                                        <li> Photos. </li>
+                                        <li> Microphone and camera, including turning them on whenever. </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-12">
+                                    <h5> What should you do? </h5>
+                                    <ul>
+                                        <li> Make sure that the required permissions make sense. </li>
+                                        <li> Research apps that require permissions that seem strange to verify legitimacy.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="wifi" class="card card-block">
+                            <h4 class="card-title"> Unsecured Wi-Fi </h4>
+                            <hr>
+                            <h5> Watch the following video to learn about unsecured wi-fi. </h5>
+                            <div id="pw-video" class="embed-responsive embed-responsive-16by9 m-y-2">
+                                <iframe align="middle" class="embed-responsive-item" src="//www.youtube.com/embed/lFo49yL06Qg" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="card card-block no-border">
+                            <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('mobile_quiz') }}" role="button"> Take the quiz! </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-
     </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="static/js/csam.js"></script>
     <script src="static/js/passwordCracker.js"></script>
-    <script src="static/js/dictionaryLookup.js"></script>
+    <script src="static/js/jquery.scrollTo.min.js"></script>
+    <script src="static/js/util.js"></script>
+    <script src="static/js/scrollspy.js"></script>
+    <script src="static/js/tab.js"></script>
+    <script>
+        $('body').scrollspy({
+            target: '#sidebar',
+            offset: ($(window).height() * .20)
+        });
+        $(document).ready(function () {
+            $('#sidebar-links > li > a[href^="#"]').click(function (e) {
+                e.preventDefault();
+                $(window).stop(true).scrollTo(this.hash, {
+                    duration: 700,
+                    interrupt: true,
+                    offset: -50,
+                    easing: "swing"
+                });
+            });
+        });
+    </script>
 </body>
+
+</html>
 
 </html>
