@@ -6,27 +6,22 @@ function convert(timeToCrack, units) {
     if (timeToCrack >= 31104000) {
         timeToCrack = timeToCrack / 31104000;
         units = 'year(s)';
-    }
-    else if (timeToCrack >= 2592000) {
+    } else if (timeToCrack >= 2592000) {
         timeToCrack = timeToCrack / 2592000;
         units = 'month(s)';
-    }
-    else if (timeToCrack >= 86400) {
+    } else if (timeToCrack >= 86400) {
         timeToCrack = timeToCrack / 86400;
         units = 'day(s)';
-    }
-    else if (timeToCrack >= 360) {
+    } else if (timeToCrack >= 360) {
         timeToCrack = timeToCrack / 360;
         units = 'hour(s)';
-    }
-    else if (timeToCrack >= 60) {
+    } else if (timeToCrack >= 60) {
         timeToCrack = timeToCrack / 60;
         units = 'minute(s)';
     }
     if (timeToCrack < 1) {
         timeToCrack = timeToCrack.toFixed(7);
-    }
-    else {
+    } else {
         timeToCrack = numberWithCommas(Math.round(timeToCrack));
     }
     timeToCrack = timeToCrack + ' ' + units;
@@ -34,31 +29,31 @@ function convert(timeToCrack, units) {
 }
 
 function searchDict() {
-    var password = $('#passwordTxt').val()
-        , result = ''
-        , character = ''
-        , i = 0;
-    
+    var password = $('#passwordTxt').val(),
+        result = '',
+        character = '',
+        i = 0;
+
     character = password.charAt(0);
-    
+
     timeTaken = findWord(dictionaryAttack, password);
 }
-    
+
 function guessPassword() {
-    var password = $('#passwordTxt').val()
-        , i = 0
-        , searchSpace = 0
-        , hasSymbol = false
-        , hasNumber = false
-        , hasUpper = false
-        , hasLower = false
-        , character = password.charAt(i)
-        , allCombinations = 0
-        , timeToCrackOffline = 0
-        , units = 'second(s)'
-        , rateOffline = 6000000
-        , allCombinations = 0;
-    
+    var password = $('#passwordTxt').val(),
+        i = 0,
+        searchSpace = 0,
+        hasSymbol = false,
+        hasNumber = false,
+        hasUpper = false,
+        hasLower = false,
+        character = password.charAt(i),
+        allCombinations = 0,
+        timeToCrackOffline = 0,
+        units = 'second(s)',
+        rateOffline = 6000000,
+        allCombinations = 0;
+
     // If there's no password, set everything to 0.
     // Password isn't null, but an empty string?
     if (password == '') {
@@ -75,12 +70,9 @@ function guessPassword() {
         document.getElementById('rate').innerHTML = '';
         document.getElementById('printDictSize').innerHTML = '';
         document.getElementById('result').innerHTML = '';
-    }
-    
-    else {
+    } else {
         // Determines what the password has in it.
         for (i; i < password.length; i++) {
-            console.log(password);
             if (/[@~`!#$%\^&*+=\-\[\]\\';,/{}|\\": <>\?]/.test(password)) {
                 hasSymbol = true;
             }
@@ -101,8 +93,7 @@ function guessPassword() {
             searchSpace += 33;
             temp.innerHTML = '&#10004;';
             temp.className = 'text-xs-center green';
-        }
-        else {
+        } else {
             temp.innerHTML = '&#10008;';
             temp.className = 'text-xs-center red';
         }
@@ -111,8 +102,7 @@ function guessPassword() {
             searchSpace += 26;
             temp.innerHTML = '&#10004;';
             temp.className = 'text-xs-center green';
-        }
-        else {
+        } else {
             temp.innerHTML = '&#10008;';
             temp.className = 'text-xs-center red';
         }
@@ -121,8 +111,7 @@ function guessPassword() {
             searchSpace += 26;
             temp.innerHTML = '&#10004;';
             temp.className = 'text-xs-center green';
-        }
-        else {
+        } else {
             temp.innerHTML = '&#10008;';
             temp.className = 'text-xs-center red';
         }
@@ -131,8 +120,7 @@ function guessPassword() {
             searchSpace += 10;
             temp.innerHTML = '&#10004;';
             temp.className = 'text-xs-center green';
-        }
-        else {
+        } else {
             temp.innerHTML = '&#10008;';
             temp.className = 'text-xs-center red';
         }
@@ -140,18 +128,17 @@ function guessPassword() {
         if (password.length >= 8) {
             temp.innerHTML = '&#10004;';
             temp.className = 'text-xs-center green';
-        }
-        else {
+        } else {
             temp.innerHTML = '&#10008;';
             temp.className = 'text-xs-center red';
         }
-        
+
         allCombinations = Math.pow(searchSpace, password.length);
-        
+
         // This is in seconds already.
         // Also assumes worst case.
         timeToCrackOffline = Math.pow(searchSpace, password.length) / rateOffline;
-        
+
         document.getElementById('possibleCharacters').innerHTML = searchSpace;
         document.getElementById('searchSpace').innerHTML = numberWithCommas(allCombinations);
         document.getElementById('rate').innerHTML = numberWithCommas(rateOffline);
@@ -160,23 +147,22 @@ function guessPassword() {
 }
 
 function findWord(dictionary, password) {
-    var start = $.now()
-        , end = 0
-        , timeTaken = 0;
-    
+    var start = $.now(),
+        end = 0,
+        timeTaken = 0;
+
     if (jQuery.inArray(password, dictionary) >= -1 && jQuery.inArray(password, dictionary) !== -1) {
         result = 'Found!';
-    }
-    else {
+    } else {
         result = 'Not Found!';
     }
-    
+
     end = $.now();
     timeTaken = ((end - start) / 1000);
-    
+
     $('#time').text(timeTaken + " seconds");
     $('#result').text(result);
     $('#printDictSize').text(dictionary.length);
-    
+
     return timeTaken;
 }
