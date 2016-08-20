@@ -4,43 +4,45 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Cyber Security Awareness Module </title>
-    <!-- Core CSS -->
+
+    <title> Browser Security </title>
+
     <link type="text/css" rel="stylesheet" href="static/css/csam.css">
-    <!-- Roboto -->
+
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
     <link rel="apple-touch-icon" sizes="76x76" href="static/images/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicons/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/png" href="static/images/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="static/images/favicons/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="static/images/favicons/favicon-96x96.png" sizes="96x96">
     <link rel="shortcut icon" href="static/images/favicons/favicon.ico">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <![endif]-->
 </head>
 
 <body data-spy="scroll" data-target="#sidebar">
-  <header class="navbar navbar-right navbar-full navbar-light" role="banner">
-      <div class="clearfix">
-          <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2"> &#9776; </button>
-      </div>
-      <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
-          <nav class="nav navbar-nav">
-              <div class="pull-xs-left"> <a class="nav-item nav-link" href="{{ url_for('index') }}"> Home </a> </div>
-              <div class="pull-xs-right"> <a class="nav-item nav-link" href="{{ url_for('passwords') }}"> Passwords </a> <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a> <a class="nav-item nav-link active" href="{{ url_for('browser') }}"> Browser Security </a> <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a> </div>
-          </nav>
-      </div>
-  </header>
+
+    <header class="navbar navbar-right navbar-full navbar-light hidden-sm-down" role="banner">
+        <nav class="nav navbar-nav">
+            <div class="pull-xs-left">
+                <a class="nav-item nav-link" href="{{ url_for('index') }}"> Home </a>
+            </div>
+            <div class="pull-xs-right">
+                <a class="nav-item nav-link" href="{{ url_for('passwords') }}"> Passwords </a>
+                <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
+                <a class="nav-item nav-link active" href="{{ url_for('browser') }}"> Browser Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
+            </div>
+        </nav>
+    </header>
 
     <div class="container-fluid hidden-md-up p-x-0">
-        <div class="row m-t-2">
-            <div class="container-fluid">
-                <div class="card">
-                    <div class="card-block text-xs-center">
-                        <h3> Unfortunately, this content is unable to be viewed on this resolution. Please view it on a computer or change the orientation of your tablet. </h3> </div>
+        <div class="row">
+            <div class="card">
+                <div class="card-block text-xs-center">
+                    <h3> Unfortunately, this content is unable to be viewed on this resolution. Please view it on a computer or change the orientation of your tablet. </h3>
                 </div>
             </div>
         </div>
@@ -51,11 +53,9 @@
             <div class="jumbotron jumbotron-fluid col-md-12">
                 <div class="container">
                     <h1 class="display-3"> Browser Security </h1>
-                    <h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4>
-                </div>
+                    <h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4> </div>
             </div>
         </div>
-
         <div class="row">
             <div class="container">
                 <div id="content-container" class="row">
@@ -74,47 +74,55 @@
                             </nav>
                         </div>
                     </div>
+
                     <div id="content" class="col-md-10">
                         <div class="card card-block">
                             <h3 id="cookies" class="card-title"> Cookies </h3>
                             <hr>
-                            <h5> What is a cookie? </h5>
-                            <ul class="real-list">
+
+                            <h5> Ever notice that your ads on Facebook seem to match your recent Google searches? How does that work? </h5>
+
+                            <img src="static/images/cookie.jpg">
+
+                            <h5> They're using cookies to store information about you.</h5>
+
+                            <h5> What are cookies? </h5>
+
+                            <ul>
                                 <li> A text file that stores data on your computer. </li>
                                 <li> It was invented to remember information about the user, in an attempt to personalize websites. </li>
                                 <li> Cookies can store saved passwords, track your browsing patterns. </li>
                             </ul>
                             <h5> What do cookies do? </h5>
-                            <ul class="real-list">
+                            <ul>
                                 <li> Have you ever noticed ads shown on your Facebook page consistently match your recent Google searches or purchases from Amazon? </li>
                                 <li> Cookies can be used to track what you buy or search in order to customize your advertising, in the hopes that you buy similar products. </li>
                                 <li> They can also store information, such Amazon using cookies to store products that you've shown interest into a "shopping cart." </li>
                             </ul>
                             <h5> How can you protect yourself? </h5>
-                            <ul class="real-list">
+                            <ul>
                                 <li> You can configure your browser settings to allow cookies only from sites you trust and disable from sites you don't. </li>
-                                <li> Follow the instructions specific to your browser below to configure cookies for specific sites. </li>
-                            </ul class="real-list">
+                            </ul>
                         </div>
                         <div class="card card-block">
                             <h4 id="plugins" class="card-title"> Plug-Ins </h4>
                             <hr>
                             <h5> What is a plug-in? </h5>
-                            <ul class="real-list">
+                            <ul>
                                 <li> Applications intended for use in the web browser such as Adobe Flash. </li>
                                 <li> Plug-Ins are programs, and such, are vulnerable to many of the same problems, including being poorly written or written with malicious intentions. </li>
                                 <li> Vulnerabilities in plug-ins can also allow attackers to install malware. </li>
                             </ul>
                             <h5> How can you protect yourself? </h5>
-                            <ul class="real-list">
+                            <ul>
                                 <li> Only install plug-ins from official sources, such as the Chrome Web Store or Firefox Addons. </li>
                                 <li> Be aware that while plug-ins from official sources are safer than third-party installations, they are not completely safe. </li>
                                 <li> Never install an unknown plug-in. </li>
                             </ul>
-                            <p> Select your browser to get instructions on how to disable plug-ins.</p>
                             <hr>
+                            <h6> Click on the images below to go through the steps of disabling plug-ins. </h6>
                             <div class="card text-xs-center">
-                                <ul class="nav nav-tabs real-list" role="tablist">
+                                <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#chrome-plugins" role="tab">Chrome</a> </li>
                                     <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#firefox-plugins" role="tab">Firefox</a> </li>
                                     <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#ie-plugins" role="tab">Internet Explorer</a> </li>
@@ -122,13 +130,13 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="chrome-plugins" role="tabpanel">
-                                        <img width="75%" src="static/images/chrome-extensions.gif">
+                                        <img class="p-x-1" id="chrome-extension-img" src="static/images/extensions-chrome/step1.png" onclick="changeSrc(this)">
                                     </div>
                                     <div class="tab-pane" id="firefox-plugins" role="tabpanel">
-                                        <img width="75%" src="static/images/firefox-extensions.gif">
+                                        <img class="p-x-1" id="firefox-extension-img" src="static/images/extensions-firefox/step1.png" onclick="changeSrc(this)">
                                     </div>
                                     <div class="tab-pane" id="ie-plugins" role="tabpanel">
-                                        <img width="75%" src="static/images/ie-extensions.gif">
+                                        <img class="p-x-1" id="ie-extension-img" src="static/images/extensions-ie/step1.png" onclick="changeSrc(this)">
                                     </div>
                                 </div>
                             </div>
@@ -137,20 +145,21 @@
                             <h4 id="popups" class="card-title"> Pop-Ups </h4>
                             <hr>
                             <h5> What is a pop-up? </h5>
-                            <ul class="real-list">
+                            <ul>
                                 <li> Pop-ups are small windows that are automatically opened when you visit a page. </li>
                                 <li> Most pop-ups are advertisements. </li>
                                 <li> Pop-ups can lead to unintentional downloads or take you to sites you don't mean to go to. </li>
                                 <li> Some pop-ups are 'chained,' making it difficult for you to close them, as they open another one as soon as they are closed. </li>
                             </ul>
                             <h5> How can you protect yourself? </h5>
-                            <ul class="real-list">
+                            <ul>
                                 <li> By default, most browsers block pop-ups. </li>
                                 <li> If, for some reason, you turn off your pop-up blocker, remember to turn it back on! </li>
                                 <li> Follow the instructions specific to your browser below to configure cookies for specific sites. </li>
                             </ul>
+                            <hr>
 
-                            <p> Select your browser to get instructions on how to change your pop-up settings.</p>
+                            <h6> Click on the images below to go through the steps of disabling pop-ups. </h6>
                             <div class="card text-xs-center">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#chrome-popups" role="tab">Chrome</a> </li>
@@ -160,13 +169,13 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="chrome-popups" role="tabpanel">
-                                        <img width="75%" src="static/images/popup.gif">
+                                        <img class="p-x-1" id="chrome-popups-img" src="static/images/extensions-chrome/step1.png" onclick="changeSrc(this)">
                                     </div>
                                     <div class="tab-pane" id="firefox-popups" role="tabpanel">
-                                        <p> Nothing here yet. </p>
+                                        <img class="p-x-1" id="firefox-popups-img" src="static/images/extensions-firefox/step1.png" onclick="changeSrc(this)">
                                     </div>
                                     <div class="tab-pane" id="ie-popups" role="tabpanel">
-                                        <p> Nor here. </p>
+                                        <img class="p-x-1" id="ie-popups-img" src="static/images/extensions-ie/step1.png" onclick="changeSrc(this)">
                                     </div>
                                 </div>
                             </div>
@@ -199,18 +208,21 @@
     <script src="static/js/tab.js"></script>
     <script>
         $('body').scrollspy({
-            target: '#sidebar'
-            , offset: ($(window).height() * .20)
+            target: '#sidebar',
+            offset: ($(window).height() * .20)
         });
         $(document).ready(function () {
-            $('#sidebar-links > li > a[href^="#"]').click(function(e) {
+            $('#sidebar-links > li > a[href^="#"]').click(function (e) {
                 e.preventDefault();
                 $(window).stop(true).scrollTo(this.hash, {
-                    duration: 700
-                    , interrupt: true
-                    , offset: -50
-                    , easing: "swing"
+                    duration: 700,
+                    interrupt: true,
+                    offset: -50,
+                    easing: "swing"
                 });
             });
         });
     </script>
+</body>
+
+</html>

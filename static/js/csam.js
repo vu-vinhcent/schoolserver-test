@@ -57,7 +57,7 @@ function changeSrc(element) {
         }
 
         imgNum[6]
-        element.src = 'assets/images/extensions-chrome/' + next;
+        element.src = 'static/images/extensions-chrome/' + next;
     }
 
     if (element.id == 'firefox-extension-img') {
@@ -70,7 +70,7 @@ function changeSrc(element) {
         }
 
         imgNum[6]
-        element.src = 'assets/images/extensions-firefox/' + next;
+        element.src = 'static/images/extensions-firefox/' + next;
     }
 
     if (element.id == 'ie-extension-img') {
@@ -85,7 +85,7 @@ function changeSrc(element) {
         }
 
         imgNum[6]
-        element.src = 'assets/images/extensions-ie/' + next;
+        element.src = 'static/images/extensions-ie/' + next;
     }
 
     if (element.id == 'chrome-popups-img') {
@@ -102,7 +102,7 @@ function changeSrc(element) {
         }
 
         imgNum[6]
-        element.src = 'assets/images/popups-chrome/' + next;
+        element.src = 'static/images/popups-chrome/' + next;
     }
 
     if (element.id == 'firefox-popups-img') {
@@ -117,7 +117,7 @@ function changeSrc(element) {
         }
 
         imgNum[6]
-        element.src = 'assets/images/popups-firefox/' + next;
+        element.src = 'static/images/popups-firefox/' + next;
     }
 
     if (element.id == 'ie-popups-img') {
@@ -132,7 +132,7 @@ function changeSrc(element) {
         }
 
         imgNum[6]
-        element.src = 'assets/images/popups-ie/' + next;
+        element.src = 'static/images/popups-ie/' + next;
     }
 }
 
