@@ -30,16 +30,30 @@ function checkProgress() {
 function checkQuestion1() {
     if ($('input[name=question1]:checked').val() == 'true') {
         $("#q1-check").replaceWith('<span id="q1-check" class="question-space green"> &#10004; </span>');
+        document.getElementById('email-results').innerHTML = '<br>Correct! Both of these emails exhibit the phishing warning signs.';
     } else {
         $("#q1-check").replaceWith('<span id="q1-check" class="question-space red"> &#10008; </span>');
+        document.getElementById('email-results').innerHTML = '<br>Incorrect! Both of these emails exhibit the phishing warning signs.';
     }
 }
 
 function checkQuestion2() {
     if ($('input[name=question2]:checked').val() == 'true') {
         $("#q2-check").replaceWith('<span id="q2-check" class="question-space green"> &#10004; </span>');
+        document.getElementById('fake-websites-results').innerHTML = '<br>Correct! Notice that website 1 has "https://" as well as the padlock icon, where website 2 doesn\'t.';
     } else {
         $("#q2-check").replaceWith('<span id="q2-check" class="question-space red"> &#10008; </span>');
+        document.getElementById('fake-websites-results').innerHTML = '<br>Incorrect! Notice that website 1 has "https://" as well as the padlock icon, where website 2 doesn\'t.';
+    }
+}
+
+function checkQuestion3() {
+    if ($('input[name=question3]:checked').val() == 'true') {
+        $("#q3-check").replaceWith('<span id="q3-check" class="question-space green"> &#10004; </span>');
+        document.getElementById('phishing-results').innerHTML = '<br>Correct! It is possible that someone has found your name and last 4 digits of your account number and used that to craft a spearphishing email. The link may lead to a site that is designed to steal your credentials.';
+    } else {
+        $("#q3-check").replaceWith('<span id="q3-check" class="question-space red"> &#10008; </span>');
+        document.getElementById('phishing-results').innerHTML = '<br>Sorry! It is possible that someone has found your name and last 4 digits of your account number and used that to craft a spearphishing email. The link may lead to a site that is designed to steal your credentials.';
     }
 }
 

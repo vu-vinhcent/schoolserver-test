@@ -153,6 +153,7 @@
                             <div class="form-check" style="text-align: center;">
                                 <button class="submit" onclick="checkQuestion1()"> Submit! </button>
                             </div>
+                            <div id="email-results"></div>
                         </div>
 
                         <div class="card card-block">
@@ -220,6 +221,8 @@
                             <div class="form-check" style="text-align: center;">
                                 <button class="submit" onclick="checkQuestion2()"> Submit! </button>
                             </div>
+
+                            <div id="fake-websites-results"></div>
                         </div>
                         <div class="card card-block">
                             <h5> How do you identify fake websites? </h5>
@@ -236,7 +239,32 @@
                               "Spear Phishing" is a specific type of phishing attack that appears to come from a trusted source. Attackers
                               can use information they find online to impersonate someone that the victim trusts, increasing the chance of a successful attack.
                             </p>
-                            <img src="/static/images/phishing-email.png">
+                            <img style="margin: auto;display: block;" src="/static/images/phishing-email.png">
+                            <br/>
+                            <div id="question3">
+                                <div id='q3-check' class="question-space"> &nbsp; </div>
+
+                                <h5> Do you think that this is a phishing email? </h5>
+
+                                <div class="form-check indent">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="question3" id="q3a1" value="true"> Yes
+                                    </label>
+
+                                    <br>
+
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="question3" id="q3a2" value="false"> No
+                                    </label>
+
+                                    <br>
+
+                                </div>
+                            </div>
+                            <div class="form-check" style="text-align: center;">
+                                <button class="submit" onclick="checkQuestion3()"> Submit! </button>
+                            </div>
+                            <div id="phishing-results"></div>
                         </div>
                         <div class="card card-block">
                            <h5 id="privacy">Privacy</h5>
