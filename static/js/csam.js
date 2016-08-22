@@ -50,10 +50,10 @@ function checkQuestion2() {
 function checkQuestion3() {
     if ($('input[name=question3]:checked').val() == 'true') {
         $("#q3-check").replaceWith('<span id="q3-check" class="question-space green"> &#10004; </span>');
-        document.getElementById('phishing-results').innerHTML = '<br>Correct! It is possible that someone has found your name and the last 4 digits of your account number and used that to craft a spearphishing email. The link may lead to a site that is designed to steal your credentials.';
+        document.getElementById('phishing-results').innerHTML = '<br>Correct! It is possible for an attacker to find your name as well as some details about your account. Personal information like this can be used to craft convincing spearphishing emails. The link in this email may lead to a site that is designed to steal your credentials.';
     } else {
         $("#q3-check").replaceWith('<span id="q3-check" class="question-space red"> &#10008; </span>');
-        document.getElementById('phishing-results').innerHTML = '<br>Incorrect! It is possible that someone has found your name and the last 4 digits of your account number and used that to craft a spearphishing email. The link may lead to a site that is designed to steal your credentials.';
+        document.getElementById('phishing-results').innerHTML = '<br>Incorrect! It is possible for an attacker to find your name as well as some details about your account. Personal information like this can be used to craft convincing spearphishing emails. The link in this email may lead to a site that is designed to steal your credentials.';
     }
 }
 
