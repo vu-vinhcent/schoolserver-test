@@ -45,6 +45,8 @@ function checkQuestion2() {
         $("#q2-check").replaceWith('<span id="q2-check" class="question-space red"> &#10008; </span>');
         document.getElementById('fake-websites-results').innerHTML = '<br>Incorrect! Notice that website 1 has "https://" as well as the padlock icon, where website 2 doesn\'t.';
     }
+    document.getElementById("fake-website-image-1").src="static/images/image1 copy.jpg";
+    document.getElementById("fake-website-image-2").src="static/images/image2 copy.jpg";
 }
 
 function checkQuestion3() {
