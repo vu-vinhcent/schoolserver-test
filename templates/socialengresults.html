@@ -21,21 +21,6 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-   #card_div {
-   width: 31.3%;
-   height: 220px;
-   margin: 1%;
-   margin-left:1%;
-   padding: 1%;
-   overflow-y: scroll;
-   float:left;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   }
-   #card_div:hover {
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   }
-</style>
 </head>
 
 <body data-spy="scroll" data-target="#sidebar">
@@ -79,13 +64,13 @@
                         <div id="sidebar">
                             <nav>
                                 <ul id="sidebar-links" class="nav nav-pills nav-stacked">
-                                  <li class="nav-item"> <a class="nav-link" href="#phishing"> Phishing </a> </li>
-                                  <hr>
-                                  <li class="nav-item"> <a class="nav-link" href="#fakesites"> Fake Websites </a> </li>
-                                  <hr>
-                                  <li class="nav-item"> <a class="nav-link" href="#spearphishing"> Spear Phishing </a> </li>
-                                  <hr>
-                                  <li class="nav-item"> <a class="nav-link" href="#privacy"> Privacy </a> </li>
+                                    <li class="nav-item"> <a class="nav-link" href="#phishing"> Phishing </a> </li>
+                                    <hr>
+                                    <li class="nav-item"> <a class="nav-link" href="#fakesites"> Fake Websites </a> </li>
+                                    <hr>
+                                    <li class="nav-item"> <a class="nav-link" href="#spearphishing"> Spear Phishing </a> </li>
+                                    <hr>
+                                    <li class="nav-item"> <a class="nav-link" href="#privacy"> Privacy </a> </li>
                                 </ul>
                             </nav>
                         </div>
@@ -252,8 +237,7 @@
                         <div class="card card-block">
                             <h5 id="spearphishing"> Spear Phishing </h5>
                             <p>
-                              "Spear Phishing" is a specific type of phishing attack that appears to come from a trusted source. Attackers
-                              can use information they find online to impersonate someone that the victim trusts, increasing the chance of a successful attack.
+                                "Spear Phishing" is a specific type of phishing attack that appears to come from a trusted source. Attackers can use information they find online to impersonate someone that the victim trusts, increasing the chance of a successful attack.
                             </p>
                             <img style="margin: auto;display: block;" src="/static/images/phishing-email.png">
 
@@ -284,72 +268,60 @@
 
                         </div>
                         <div class="card card-block">
-                           <h5 id="privacy">Privacy</h5>
-                           <p>
-                           Disclosing personal information on the internet can have devastating effects. Social networks can provide attackers
-                           with information such as full name, DOB, hometown, relationship information, education, graduation dates, pet names,
-                           interests, hobbies, and affiliations. This information can be used in a spear phishing attack to gain further
-                           information about a target, as well as crafting targeted password attacks.
-                           <br/><br/>
+                            <h5 id="privacy">Privacy</h5>
+                            <p>
+                                Disclosing personal information on the internet can have devastating effects. Social networks can provide attackers with information such as full name, DOB, hometown, relationship information, education, graduation dates, pet names, interests, hobbies, and affiliations. This information can be used in a spear phishing attack to gain further information about a target, as well as crafting targeted password attacks.
+                                <br/>
+                                <br/> There is a shocking amount of information available online. Knowing someone's name and location is often all you need to find specific details about someone. Type your first and last name into the form below to see if we can find information about you.
+                            </p>
 
+                            <form method="POST">
+                                <fieldset class="form-group" style="padding-bottom:10px;">
+                                    <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
+                                    <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
+                                </fieldset>
+                                <input id="clickClick" value="Submit" type="submit">
+                            </form>
 
-                           There is a shocking amount of information available online. Knowing someone's name and location
-                           is often all you need to find specific details about someone. Type your first and last name into the
-                           form below to see if we can find information about you.
-                          </p>
+                            <a name="results"></a>
+                            <div class="card-deck-wrapper">
+                                <div class="card-deck">
+                                    {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
+                                    <div class="card card-block m-b-1">
+                                        <h4>
+                                           {% if dict_item['name'] %}
+                                           {{dict_item['name']}}</br>
+                                           {% endif %}
+                                        </h4>
+                                        <p>
+                                            {% if dict_item['dob'] %}
+                                            <b>DOB: </b>{{dict_item['dob']}}</br>
+                                            {% endif %} {% if dict_item['age'] %}
+                                            <b>Age:</b> {{dict_item['age']}}</br>
+                                            {% endif %} {% if dict_item['locations'] %}
+                                            <b>Locations: </b>{{', '.join(dict_item['locations'])}}</br>
+                                            {% endif %} {% if dict_item['marital_status'] %}
+                                            <b>Marital Status:</b> {{dict_item['includes']['marital_status']}}</br>
+                                            {% endif %} {% if dict_item['relatives'] %}
+                                            <b>Relatives: </b>{{', '.join(dict_item['relatives'])}}</br>
+                                            {% endif %} {% if dict_item['aliases' ] %}
+                                            <b>Aliases: </b>{{', '.join(dict_item['aliases'])}}</br>
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                    {% else %}
+                                    <p>No data found. This doesn't mean that you don't have public information on the internet, just that our specific program can't find any.</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            </br>
 
-                          <form method="POST">
-                             <fieldset class="form-group" style="padding-bottom:10px;">
-                                <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
-                                <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
-                             </fieldset>
-                             <input id="clickClick" value="Submit" type="submit">
-                          </form>
-
-                          <a name="results"></a>
-                       <div style="card-block">
-                          <div style="margin: 0 auto;  padding:10px; overflow:auto;">
-                             {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
-                             <div id="card_div">
-                                <h4>
-                                   {% if dict_item['name'] %}
-                                   {{dict_item['name']}}</br>
-                                   {% endif %}
-                                </h4>
-                                <p>
-                                   {% if dict_item['dob'] %}
-                                   <b>DOB: </b>{{dict_item['dob']}}</br>
-                                   {% endif %}
-                                   {% if dict_item['age'] %}
-                                   <b>Age:</b> {{dict_item['age']}}</br>
-                                   {% endif %}
-                                   {% if dict_item['locations'] %}
-                                   <b>Locations: </b>{{', '.join(dict_item['locations'])}}</br>
-                                   {% endif %}
-                                   {% if dict_item['marital_status'] %}
-                                   <b>Marital Status:</b> {{dict_item['includes']['marital_status']}}</br>
-                                   {% endif %}
-                                   {% if dict_item['relatives'] %}
-                                   <b>Relatives: </b>{{', '.join(dict_item['relatives'])}}</br>
-                                   {% endif %}
-                                   {% if dict_item['aliases' ] %}
-                                   <b>Aliases: </b>{{', '.join(dict_item['aliases'])}}</br>
-                                   {% endif %}
-                                </p>
-                             </div>
-                             {% else %}
-                             <p>No data found. This doesn't mean that you don't have public information on the internet, just that our specific program can't find any.</p>
-                             {% endfor %}
-                          </div>
-                       </div>
-                     </br>
-
-                          Some tips to keep your information safe and out of the hands of attackers:
-                          <ul class="real-list">
-                            <li>Be mindful of how much personal information you share on social networks.</li>
-                            <li>Dispose of old computers and phones (any device with data) securely.</li>
-                            <li>For password security verification questions, use a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
-                          </ul>
+                            Some tips to keep your information safe and out of the hands of attackers:
+                            <ul class="real-list">
+                                <li>Be mindful of how much personal information you share on social networks.</li>
+                                <li>Dispose of old computers and phones (any device with data) securely.</li>
+                                <li>For password security verification questions, use a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
+                            </ul>
                         </div>
                         <div class="card card-block no-border"> <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('social_engineering_quiz') }}" role="button"> Take the quiz! </a> </div>
                     </div>
@@ -358,16 +330,15 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script> $(function(){ window.location.hash = "results"; }); </script>
-    <script src="static/js/tether.min.js"></script>
-    <script src="static//js/tooltip.js"></script>
-    <script src="static/js/popover.js"></script>
     <script src="static/js/util.js"></script>
     <script src="static/js/tab.js"></script>
     <script src="static/js/scrollspy.js"></script>
     <script src="static/js/jquery.scrollTo.min.js"></script>
     <script src="static/js/csam.js"></script>
     <script>
+        $(function () {
+            window.location.hash = "results";
+        });
         $('body').scrollspy({
             target: '#sidebar',
             offset: ($(window).height() * .15)
