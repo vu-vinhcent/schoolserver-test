@@ -55,6 +55,7 @@ function checkQuestion3() {
         $("#q3-check").replaceWith('<span id="q3-check" class="question-space red"> &#10008; </span>');
         document.getElementById('phishing-results').innerHTML = '<br>Incorrect! It is possible for an attacker to find your name as well as some details about your account. Personal information like this can be used to craft convincing spearphishing emails. The link in this email may lead to a site that is designed to steal your credentials.';
     }
+    document.getElementById('spearphishing-image').innerHTML = '<img style="margin: auto; display: block;" src="/static/images/phishing-email copy.png">';
 }
 
 function changeSrc(element) {
