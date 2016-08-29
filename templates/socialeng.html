@@ -80,15 +80,15 @@
                             <h3 id="phishing" class="card-title"> Phishing and You </h3>
                             <hr>
 
-                            <p>Review the emails below and see if you think they are suspicious.</p>
+                            <p class="card card-block card-instruction"> Review the emails below and see if you think they are suspicious. </p>
 
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#level1" role="tab">Email 1</a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#level2" role="tab">Email 2</a> </li>
+                                <li class="nav-item"> <a class="nav-link light-bg active" data-toggle="tab" href="#level1" role="tab">Email 1</a> </li>
+                                <li class="nav-item"> <a class="nav-link lighter-bg" data-toggle="tab" href="#level2" role="tab">Email 2</a> </li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <div class="tab-pane card-block active" id="level1" role="tabpanel">
+                                <div class="tab-pane card-block light-bg active" id="level1" role="tabpanel">
                                     <p> To: a_student@columbusstate.edu
                                         <br> From: "John Smith" &lt;john_smith@schoolfeepayment.xyz&gt;
                                         <br> Subject: URGENT! Unbalanced account, dropped classes now if no REPLY
@@ -101,7 +101,7 @@
 
                                 </div>
 
-                                <div class="tab-pane card-block" id="level2" role="tabpanel">
+                                <div class="tab-pane card-block lighter-bg" id="level2" role="tabpanel">
                                     <p> To: a_student@columbusstate.edu
                                         <br> From: “Jeremy Little” &lt;j.little@fedaid.com&gt;
                                         <br> Subject: Your FAFSA Account – Account Compromised
@@ -174,20 +174,19 @@
                         <div class="card card-block">
                             <h5 id="fakesites"> Fake Websites </h5>
                             <p> Phishing emails can take you to fake websites that are designed to look like legitimate websites. </p>
-                            <br>
-                            <p> Click on the tabs below to switch between two websites. Which one is real? </p>
+                            <p class="card card-block card-instruction"> Click on the tabs below to switch between two websites. Which one is real? </p>
 
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#web1" role="tab">Website 1</a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#web2" role="tab">Website 2</a> </li>
+                                <li class="nav-item"> <a class="nav-link light-bg active" data-toggle="tab" href="#web1" role="tab">Website 1</a> </li>
+                                <li class="nav-item"> <a class="nav-link lighter-bg" data-toggle="tab" href="#web2" role="tab">Website 2</a> </li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <div class="tab-pane card-block active" id="web1" role="tabpanel">
+                                <div class="tab-pane card-block light-bg active" id="web1" role="tabpanel">
                                     <img id="fake-website-image-1" style="max-width: 100%" src="static/images/image1.jpg">
                                 </div>
 
-                                <div class="tab-pane card-block" id="web2" role="tabpanel">
+                                <div class="tab-pane card-block lighter-bg" id="web2" role="tabpanel">
                                     <img id="fake-website-image-2" style="max-width: 100%" src="static/images/image2.jpg">
                                 </div>
                             </div>
@@ -283,9 +282,12 @@
 
 
                            There is a shocking amount of information available online. Knowing someone's name and location
-                           is often all you need to find specific details about someone. Type your first and last name into the
-                           form below to see if we can find information about you.
-                          </p>
+                           is often all you need to find specific details about someone.
+                           </p>
+
+                           <p class="card card-block card-instruction">Type your first and last name into the
+                           form below to see if we can find information about you.</p>
+
 
                           <form method="POST">
                              <fieldset class="form-group" style="padding-bottom:10px;">
@@ -309,9 +311,6 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="static/js/tether.min.js"></script>
-    <script src="static//js/tooltip.js"></script>
-    <script src="static/js/popover.js"></script>
     <script src="static/js/util.js"></script>
     <script src="static/js/tab.js"></script>
     <script src="static/js/scrollspy.js"></script>

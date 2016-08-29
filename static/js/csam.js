@@ -30,20 +30,20 @@ function checkProgress() {
 function checkQuestion1() {
     if ($('input[name=question1]:checked').val() == 'true') {
         $("#q1-check").replaceWith('<span id="q1-check" class="question-space green"> &#10004; </span>');
-        document.getElementById('email-results').innerHTML = '<br>Correct! Both of these emails exhibit signs of phishing.';
+        document.getElementById('email-results').innerHTML = '<br/><p class="card card-block card-instruction"> <br>Correct! Both of these emails exhibit signs of phishing.</p>';
     } else {
         $("#q1-check").replaceWith('<span id="q1-check" class="question-space red"> &#10008; </span>');
-        document.getElementById('email-results').innerHTML = '<br>Incorrect! Both of these emails exhibit signs of phishing.';
+        document.getElementById('email-results').innerHTML = '<br/><p class="card card-block card-instruction">Incorrect! Both of these emails exhibit signs of phishing.</p>';
     }
 }
 
 function checkQuestion2() {
     if ($('input[name=question2]:checked').val() == 'true') {
         $("#q2-check").replaceWith('<span id="q2-check" class="question-space green"> &#10004; </span>');
-        document.getElementById('fake-websites-results').innerHTML = '<br>Correct! Notice that website 1 has "https://" as well as the padlock icon, where website 2 doesn\'t.';
+        document.getElementById('fake-websites-results').innerHTML = '<br/><p class="card card-block card-instruction">Correct! Notice that website 1 has "https://" as well as the padlock icon, where website 2 doesn\'t.</p>';
     } else {
         $("#q2-check").replaceWith('<span id="q2-check" class="question-space red"> &#10008; </span>');
-        document.getElementById('fake-websites-results').innerHTML = '<br>Incorrect! Notice that website 1 has "https://" as well as the padlock icon, where website 2 doesn\'t.';
+        document.getElementById('fake-websites-results').innerHTML = '<br/><p class="card card-block card-instruction">Incorrect! Notice that website 1 has "https://" as well as the padlock icon, where website 2 doesn\'t.</p>';
     }
     document.getElementById("fake-website-image-1").src="static/images/image1 copy.jpg";
     document.getElementById("fake-website-image-2").src="static/images/image2 copy.jpg";
@@ -52,10 +52,10 @@ function checkQuestion2() {
 function checkQuestion3() {
     if ($('input[name=question3]:checked').val() == 'true') {
         $("#q3-check").replaceWith('<span id="q3-check" class="question-space green"> &#10004; </span>');
-        document.getElementById('phishing-results').innerHTML = '<br>Correct! It is possible for an attacker to find your name as well as some details about your account. Personal information like this can be used to craft convincing spearphishing emails. The link in this email may lead to a site that is designed to steal your credentials.';
+        document.getElementById('phishing-results').innerHTML = '<br/><p class="card card-block card-instruction">Correct! It is possible for an attacker to find your name as well as some details about your account. Personal information like this can be used to craft convincing spearphishing emails. The link in this email may lead to a site that is designed to steal your credentials.</p>';
     } else {
         $("#q3-check").replaceWith('<span id="q3-check" class="question-space red"> &#10008; </span>');
-        document.getElementById('phishing-results').innerHTML = '<br>Incorrect! It is possible for an attacker to find your name as well as some details about your account. Personal information like this can be used to craft convincing spearphishing emails. The link in this email may lead to a site that is designed to steal your credentials.';
+        document.getElementById('phishing-results').innerHTML = '<br/><p class="card card-block card-instruction">Incorrect! It is possible for an attacker to find your name as well as some details about your account. Personal information like this can be used to craft convincing spearphishing emails. The link in this email may lead to a site that is designed to steal your credentials.</p>';
     }
     document.getElementById('spearphishing-image').innerHTML = '<img style="margin: auto; display: block;" src="/static/images/phishing-email copy.png">';
 }
