@@ -24,8 +24,9 @@
 </head>
 
 <body data-spy="scroll" data-target="#sidebar">
+    <div id="bg"></div>
 
-    <header class="navbar navbar-right navbar-full navbar-light hidden-sm-down" role="banner">
+    <header class="navbar navbar-full navbar-light navbar-fixed-top hidden-sm-down">
         <nav class="nav navbar-nav">
             <div class="pull-xs-left">
                 <a class="nav-item nav-link" href="{{ url_for('index') }}"> Home </a>
@@ -64,18 +65,20 @@
                         <div id="sidebar">
                             <nav>
                                 <ul id="sidebar-links" class="nav nav-pills nav-stacked">
-                                  <li class="nav-item"> <a class="nav-link" href="#phishing"> Phishing </a> </li>
-                                  <hr>
-                                  <li class="nav-item"> <a class="nav-link" href="#fakesites"> Fake Websites </a> </li>
-                                  <hr>
-                                  <li class="nav-item"> <a class="nav-link" href="#spearphishing"> Spear Phishing </a> </li>
-                                  <hr>
-                                  <li class="nav-item"> <a class="nav-link" href="#privacy"> Privacy </a> </li>
+                                    <li class="nav-item"> <a class="nav-link" id="link-one" href="#phishing"> Phishing </a> </li>
+                                    <hr>
+                                    <li class="nav-item"> <a class="nav-link" id="link-two" href="#fakesites"> Fake Websites </a> </li>
+                                    <hr>
+                                    <li class="nav-item"> <a class="nav-link" id="link-three" href="#spearphishing"> Spear Phishing </a> </li>
+                                    <hr>
+                                    <li class="nav-item"> <a class="nav-link" id="link-four" href="#privacy"> Privacy </a> </li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
                     <div id="content" class="col-md-10">
+                        <p class="card card-block card-instruction"> Instructions will look like this. </p>
+
                         <div class="card card-block">
                             <h3 id="phishing" class="card-title"> Phishing and You </h3>
                             <hr>
@@ -239,12 +242,11 @@
                         <div class="card card-block">
                             <h5 id="spearphishing"> Spear Phishing </h5>
                             <p>
-                              "Spear Phishing" is a specific type of phishing attack that appears to come from a trusted source. Attackers
-                              can use information they find online to impersonate someone that the victim trusts, increasing the chance of a successful attack.
+                                "Spear Phishing" is a specific type of phishing attack that appears to come from a trusted source. Attackers can use information they find online to impersonate someone that the victim trusts, increasing the chance of a successful attack.
                             </p>
                             <div id="spearphishing-image">
-                            <img style="margin: auto;display: block;" src="/static/images/phishing-email.png">
-                          </div>
+                                <img style="margin: auto;display: block;" src="/static/images/phishing-email.png">
+                            </div>
                             <br/>
                             <div id="question3">
                                 <div id='q3-check' class="question-space"> &nbsp; </div>
@@ -272,37 +274,29 @@
                             <div id="phishing-results"></div>
                         </div>
                         <div class="card card-block">
-                           <h5 id="privacy">Privacy</h5>
-                           <p>
-                           Disclosing personal information on the internet can have devastating effects. Social networks can provide attackers
-                           with information such as full name, DOB, hometown, relationship information, education, graduation dates, pet names,
-                           interests, hobbies, and affiliations. This information can be used in a spear phishing attack to gain further
-                           information about a target, as well as crafting targeted password attacks.
-                           <br/><br/>
+                            <h5 id="privacy">Privacy</h5>
+                            <p>
+                                Disclosing personal information on the internet can have devastating effects. Social networks can provide attackers with information such as full name, DOB, hometown, relationship information, education, graduation dates, pet names, interests, hobbies, and affiliations. This information can be used in a spear phishing attack to gain further information about a target, as well as crafting targeted password attacks.
+                                <br/>
+                                <br/> There is a shocking amount of information available online. Knowing someone's name and location is often all you need to find specific details about someone.
+                            </p>
 
+                            <p class="card card-block card-instruction">Type your first and last name into the form below to see if we can find information about you.</p>
 
-                           There is a shocking amount of information available online. Knowing someone's name and location
-                           is often all you need to find specific details about someone.
-                           </p>
+                            <form method="POST">
+                                <fieldset class="form-group" style="padding-bottom:10px;">
+                                    <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
+                                    <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
+                                </fieldset>
+                                <input id="clickClick" value="Submit" type="submit">
+                            </form>
 
-                           <p class="card card-block card-instruction">Type your first and last name into the
-                           form below to see if we can find information about you.</p>
-
-
-                          <form method="POST">
-                             <fieldset class="form-group" style="padding-bottom:10px;">
-                                <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
-                                <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
-                             </fieldset>
-                             <input id="clickClick" value="Submit" type="submit">
-                          </form>
-
-                          Some tips to keep your information safe and out of the hands of attackers:
-                          <ul class="real-list">
-                            <li>Be mindful of how much personal information you share on social networks.</li>
-                            <li>Dispose of old computers and phones (any device with data) securely.</li>
-                            <li>For password security verification questions, use a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
-                          </ul>
+                            Some tips to keep your information safe and out of the hands of attackers:
+                            <ul class="real-list">
+                                <li>Be mindful of how much personal information you share on social networks.</li>
+                                <li>Dispose of old computers and phones (any device with data) securely.</li>
+                                <li>For password security verification questions, use a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
+                            </ul>
                         </div>
                         <div class="card card-block no-border"> <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('social_engineering_quiz') }}" role="button"> Take the quiz! </a> </div>
                     </div>
@@ -319,7 +313,7 @@
     <script>
         $('body').scrollspy({
             target: '#sidebar',
-            offset: ($(window).height() * .15)
+            offset: ($(window).height() * .075)
         });
         $(document).ready(function () {
             $('#sidebar-links > li > a[href^="#"]').click(function (e) {
@@ -327,12 +321,12 @@
                 $(window).stop(true).scrollTo(this.hash, {
                     duration: 700,
                     interrupt: true,
-                    offset: -50,
+                    offset: -90,
                     easing: "swing"
                 });
             });
         });
     </script>
-
+</body>
 
 </html>

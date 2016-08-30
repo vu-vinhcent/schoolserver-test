@@ -24,7 +24,7 @@
 
 <body onload="checkProgress()">
 
-    <header class="navbar navbar-right navbar-full navbar-light hidden-sm-down" role="banner">
+    <header class="navbar navbar-full navbar-light navbar-fixed-top hidden-sm-down">
         <nav class="nav navbar-nav">
             <div class="pull-xs-left">
                 <a class="nav-item nav-link active" href="{{ url_for('index') }}"> Home </a>
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <div class="container-fluid hidden-sm-down">
+    <div id="main" class="container-fluid hidden-sm-down">
         <div class="row">
             <div class="jumbotron jumbotron-fluid col-md-12 m-b-1">
                 <div class="container">

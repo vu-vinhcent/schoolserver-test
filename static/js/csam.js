@@ -45,8 +45,8 @@ function checkQuestion2() {
         $("#q2-check").replaceWith('<span id="q2-check" class="question-space red"> &#10008; </span>');
         document.getElementById('fake-websites-results').innerHTML = '<br/><p class="card card-block card-instruction">Incorrect! Notice that website 1 has "https://" as well as the padlock icon, where website 2 doesn\'t.</p>';
     }
-    document.getElementById("fake-website-image-1").src="static/images/image1 copy.jpg";
-    document.getElementById("fake-website-image-2").src="static/images/image2 copy.jpg";
+    document.getElementById("fake-website-image-1").src = "static/images/image1 copy.jpg";
+    document.getElementById("fake-website-image-2").src = "static/images/image2 copy.jpg";
 }
 
 function checkQuestion3() {
@@ -230,6 +230,16 @@ function moveSideNav() {
     }
 }
 
+function fadeBG() {
+    if ($('#link-two').hasClass('active') || $('#link-four').hasClass('active')) {
+        $('#bg').fadeIn();
+        $('.nav-item > a').addClass('inverse');
+    } else {
+        $('#bg').fadeOut();
+        $('.nav-item > a').removeClass('inverse');
+    }
+}
+
 $(document).ready(function () {
     $('#sidebar').css('width', $("#content-container").width() * .15);
 
@@ -240,6 +250,7 @@ $(document).ready(function () {
     if ($('title').text().indexOf('Quiz') <= 0 && $('title').text().indexOf('Module') <= 0) {
         $(window).scroll(function () {
             moveSideNav();
+            fadeBG();
         });
     }
 

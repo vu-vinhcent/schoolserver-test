@@ -23,8 +23,9 @@
 </head>
 
 <body data-spy="scroll" data-target="#sidebar">
+    <div id="bg"></div>
 
-    <header class="navbar navbar-right navbar-full navbar-light hidden-sm-down" role="banner">
+    <header class="navbar navbar-full navbar-light navbar-fixed-top hidden-sm-down">
         <nav class="nav navbar-nav">
             <div class="pull-xs-left">
                 <a class="nav-item nav-link" href="{{ url_for('index') }}"> Home </a>
@@ -65,16 +66,18 @@
                         <div id="sidebar">
                             <nav>
                                 <ul id="sidebar-links" class="nav nav-pills nav-stacked">
-                                    <li class="nav-item"> <a class="nav-link" href="#thirdparty"> Third-party Apps </a> </li>
+                                    <li class="nav-item"> <a class="nav-link" id="link-one" href="#thirdparty"> Third-party Apps </a> </li>
                                     <hr>
-                                    <li class="nav-item"> <a class="nav-link" href="#permissions"> App Permissions </a> </li>
+                                    <li class="nav-item"> <a class="nav-link" id="link-two" href="#permissions"> App Permissions </a> </li>
                                     <hr>
-                                    <li class="nav-item"> <a class="nav-link" href="#wifi"> Unsecured Wi-Fi </a> </li>
+                                    <li class="nav-item"> <a class="nav-link" id="link-three" href="#wifi"> Unsecured Wi-Fi </a> </li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
                     <div id="content" class="col-md-10">
+                        <p class="card card-block card-instruction"> Instructions will look like this. </p>
+
                         <div id="thirdparty" class="card card-block">
                             <h4 class="card-title"> Third-Party Apps </h4>
                             <hr>
@@ -181,7 +184,7 @@
     <script>
         $('body').scrollspy({
             target: '#sidebar',
-            offset: ($(window).height() * .20)
+            offset: ($(window).height() * .075)
         });
         $(document).ready(function () {
             $('#sidebar-links > li > a[href^="#"]').click(function (e) {
@@ -189,14 +192,12 @@
                 $(window).stop(true).scrollTo(this.hash, {
                     duration: 700,
                     interrupt: true,
-                    offset: -50,
+                    offset: -90,
                     easing: "swing"
                 });
             });
         });
     </script>
 </body>
-
-</html>
 
 </html>
