@@ -20,6 +20,7 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body onload="checkProgress()">
@@ -34,6 +35,7 @@
                 <a class="nav-item nav-link" href="{{ url_for('social_eng') }}"> Social Engineering </a>
                 <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
                 <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('malware') }}"> Malware Security </a>
             </div>
         </nav>
     </header>
@@ -50,96 +52,84 @@
 
     <div id="main" class="container-fluid hidden-sm-down">
         <div class="row">
-            <div class="jumbotron jumbotron-fluid col-md-12 m-b-1">
-                <div class="container">
+            <div class="jumbotron jumbotron-fluid col-md-12 p-a-0 m-a-0">
+                <div class="container" style="position: relative; top: 50%; transform: translateY(-50%);">
                     <h1 class="display-3"> Cybersecurity Awareness </h1>
                     <h4 class="lead"> Learn about passwords, protect yourself from social engineering, and get familiar with the basics of web security! </h4>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
+            <div class="row" id="cert-card">
+                <div class="col-lg-12 card no-border p-a-0" style="margin: 10px 0 0 10px; display: flex;">
+                    <a class="btn btn-primary" href="/get_info" style="margin: auto;"> Certificate &nbsp;<i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </a>
+                </div>
+            </div>
             <div class="row flex-items-xs-center">
-                <div class="col-xl-6 col-lg-12">
-                    <div id="p-card" class="card card-link transition">
-                        <a href="{{ url_for('passwords') }}">
 
-                            <div class="row">
-                                <div class="col-sm-4" style="position: relative; width: 100%;">
-                                    <img class="img-link" src="static/images/Password-security.jpg"></img>
-                                </div>
+                <div id="p-card" class="card index-card col-lg col-md p-x-0">
+                    <img class="img-link card-img-top hidden-md-down" src="static/images/Password-security.jpg" style="border-radius: 0px;"></img>
 
-                                <div class="col-sm-8 card-block">
-                                    <h4 id="p-title" class="transition"> Passwords </h4>
-                                    <p> Think of how many passwords you use on a daily basis. Now think about what could happen if someone else had them. </p>
-                                </div>
-                            </div>
-
-                        </a>
+                    <div class="card-block" id="p-card-block">
+                        <h4 id="p-title"> Passwords </h4>
+                        <p class="card-text"> Think of how many passwords you use on a daily basis. Now think about what could happen if someone else had them. </p>
                     </div>
+
+                    <a class="btn btn-outline-primary" href="{{ url_for('passwords') }}"> Get Started &nbsp;<i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </a>
                 </div>
 
-                <div class="col-xl-6 col-lg-12">
-                    <div id="se-card" class="card card-link transition">
-                        <a href="{{ url_for('social_eng') }}">
+                <div id="se-card" class="card index-card col-lg col-md p-x-0">
+                    <img class="img-link card-img-top hidden-md-down" src="static/images/social_engineering_dataroom_advice.jpg" style="border-radius: 0px;"></img>
 
-                            <div class="row">
-                                <div class="col-sm-4" style="position: relative; width: 100%;">
-                                    <img class="img-link" src="static/images/social_engineering_dataroom_advice.jpg"></img>
-                                </div>
-
-                                <div class="col-sm-8 card-block">
-                                    <h4 id="se-title"> Social Engineering </h4>
-                                    <p> Computers are only as secure as their users are. You are the biggest vulnerability. </p>
-                                </div>
-                            </div>
-
-                        </a>
+                    <div class="card-block" id="se-card-block">
+                        <h4 id="se-title"> Social Engineering </h4>
+                        <p class="card-text"> Computers are only as secure as their users are. You are the biggest vulnerability. </p>
                     </div>
+
+                    <a class="btn btn-outline-primary" href="{{ url_for('social_eng') }}"> Get Started &nbsp;<i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </a>
                 </div>
 
-                <div class="col-xl-6 col-lg-12">
-                    <div id="bs-card" class="card card-link transition">
-                        <a href="{{ url_for('browser') }}">
 
-                            <div class="row">
-                                <div class="col-sm-4" style="position: relative; width: 100%;">
-                                    <img class="img-link" src="static/images/browser-security-extensions.jpg"></img>
-                                </div>
+                <div id="bs-card" class="card index-card col-lg col-md p-x-0">
+                    <img class="img-link card-img-top hidden-md-down" src="static/images/browser-security-extensions.jpg" style="border-radius: 0px;"></img>
 
-                                <div class="col-sm-8 card-block">
-                                    <h4 id="bs-title"> Browser Security </h4>
-                                    <p> A securely configured browser is the first line of defence. </p>
-                                </div>
-                            </div>
+                    <div class="card-block" id="bs-card-block">
+                        <h4 id="bs-title"> Browser Security </h4>
+                        <p class="card-text"> A securely configured browser is the first line of defense. </p>
 
-                        </a>
                     </div>
+
+                    <a class="btn btn-outline-primary" href="{{ url_for('browser') }}" style="margin-top: auto;"> Get Started &nbsp;<i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </a>
                 </div>
 
-                <div class="col-xl-6 col-lg-12">
-                    <div id="ms-card" class="card card-link transition">
-                        <a href="{{ url_for('mobile') }}">
+                <div id="mos-card" class="card index-card col-lg col-md p-x-0">
+                    <img class="img-link card-img-top hidden-md-down" src="static/images/mobile%20security.jpg" style="border-radius: 0px;"></img>
 
-                            <div class="row">
-                                <div class="col-sm-4" style="position: relative; width: 100%;">
-                                    <img class="img-link" src="static/images/mobile%20security.jpg"></img>
-                                </div>
-
-                                <div class="col-sm-8 card-block">
-                                    <h4 id="ms-title"> Mobile Security </h4>
-                                    <p> Description for module. </p>
-                                </div>
-                            </div>
-
-                        </a>
+                    <div class="card-block" id="ms-card-block">
+                        <h4 id="ms-title"> Mobile Security </h4>
+                        <p class="card-text"> Mobile devices are quickly becoming a popular platform for attackers. </p>
                     </div>
+
+                    <a class="btn btn-outline-primary" href="{{ url_for('mobile') }}"> Get Started &nbsp;<i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </a>
                 </div>
 
+                <div id="mas-card" class="card index-card col-lg col-md p-x-0">
+                    <img class="img-link card-img-top hidden-md-down" src="static/images/Password-security.jpg" style="border-radius: 0px;"></img>
+
+                    <div class="card-block">
+                        <h4 id="p-title" class="transition"> Malware Security </h4>
+                        <p class="card-text"> Not all programs are good. </p>
+                    </div>
+
+                    <a class="btn btn-outline-primary" href="{{ url_for('malware') }}"> Get Started &nbsp;<i class="fa fa-chevron-circle-right" aria-hidden="true"></i> </a>
+                </div>
             </div>
         </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="static/js/csam.js"></script>
+    <script src="https://use.fontawesome.com/3e41f162c2.js"></script>
 </body>
 
 </html>

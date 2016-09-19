@@ -36,6 +36,7 @@
                 <a class="nav-item nav-link active" href="{{ url_for('social_eng') }}"> Social Engineering </a>
                 <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
                 <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('malware') }}"> Malware Security </a>
             </div>
         </nav>
     </header>
@@ -55,7 +56,8 @@
             <div class="jumbotron jumbotron-fluid col-md-12">
                 <div class="container">
                     <h1 class="display-3"> Social Engineering </h1>
-                    <h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4> </div>
+                    <!--<h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4> </div>-->
+                </div>
             </div>
         </div>
         <div class="row">
@@ -174,61 +176,85 @@
                                 <li> Grammar mistakes</li>
                             </ul>
                         </div>
+
                         <div class="card card-block">
                             <h5 id="fakesites"> Fake Websites </h5>
                             <p> Phishing emails can take you to fake websites that are designed to look like legitimate websites. </p>
-                            <p class="card card-block card-instruction"> Click on the tabs below to switch between two websites. Which one is real? </p>
 
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item"> <a class="nav-link light-bg active" data-toggle="tab" href="#web1" role="tab">Website 1</a> </li>
-                                <li class="nav-item"> <a class="nav-link lighter-bg" data-toggle="tab" href="#web2" role="tab">Website 2</a> </li>
-                            </ul>
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane card-block light-bg active" id="web1" role="tabpanel">
-                                    <img id="fake-website-image-1" style="max-width: 100%" src="static/images/image1.jpg">
+                            <div id="fake-web-exer">
+
+                                <p class="card card-block card-instruction"> Click on the tabs below to switch between two websites. Which one is real? </p>
+
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item"> <a class="nav-link light-bg active" data-toggle="tab" href="#web1" role="tab">Website 1</a> </li>
+                                    <li class="nav-item"> <a class="nav-link lighter-bg" data-toggle="tab" href="#web2" role="tab">Website 2</a> </li>
+                                </ul>
+
+                                <div class="tab-content m-b-1">
+                                    <div class="tab-pane card-block light-bg active" id="web1" role="tabpanel">
+                                        <img id="fake-website-image-1" style="max-width: 100%" src="static/images/image1.jpg">
+                                    </div>
+
+                                    <div class="tab-pane card-block lighter-bg" id="web2" role="tabpanel">
+                                        <img id="fake-website-image-2" style="max-width: 100%" src="static/images/image2.jpg">
+                                    </div>
                                 </div>
 
-                                <div class="tab-pane card-block lighter-bg" id="web2" role="tabpanel">
-                                    <img id="fake-website-image-2" style="max-width: 100%" src="static/images/image2.jpg">
+                                <div id="question2">
+                                    <div id='q2-check' class="question-space"> &nbsp; </div>
+
+                                    <h5> 1. Which of these websites is real? </h5>
+
+                                    <div class="form-check indent">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2a1" value="true"> Website 1
+                                        </label>
+
+                                        <br>
+
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2a2" value="false"> Website 2
+                                        </label>
+
+                                        <br>
+
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2a3" value="false"> Both
+                                        </label>
+
+                                        <br>
+
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2a4" value="false"> None
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-check" style="text-align: center;">
+                                    <button class="submit" onclick="checkQuestion2()"> Submit! </button>
                                 </div>
                             </div>
 
-                            <div id="question2">
-                                <div id='q2-check' class="question-space"> &nbsp; </div>
 
-                                <h5> 1. Which of these websites is real? </h5>
+                            <div id="web-results">
+                                <p id="fake-websites-results" class="card card-block card-instruction"></p>
 
-                                <div class="form-check indent">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question2" id="q2a1" value="true"> Website 1
-                                    </label>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item"> <a class="nav-link light-bg" data-toggle="tab" href="#web3" role="tab">Website 1</a> </li>
+                                    <li class="nav-item"> <a class="nav-link lighter-bg active" data-toggle="tab" href="#web4" role="tab">Website 2</a> </li>
+                                </ul>
 
-                                    <br>
+                                <div class="tab-content m-b-1">
+                                    <div class="tab-pane card-block light-bg" id="web3" role="tabpanel">
+                                        <img id="fake-website-image-1" style="max-width: 100%" src="static/images/image1 copy.jpg">
+                                    </div>
 
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question2" id="q2a2" value="false"> Website 2
-                                    </label>
-
-                                    <br>
-
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question2" id="q2a3" value="false"> Both
-                                    </label>
-
-                                    <br>
-
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question2" id="q2a4" value="false"> None
-                                    </label>
+                                    <div class="tab-pane card-block lighter-bg active" id="web4" role="tabpanel">
+                                        <img id="fake-website-image-2" style="max-width: 100%" src="static/images/image2 copy.jpg">
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="form-check" style="text-align: center;">
-                                <button class="submit" onclick="checkQuestion2()"> Submit! </button>
-                            </div>
-
-                            <div id="fake-websites-results"></div>
                         </div>
                         <div class="card card-block">
                             <h5> How do you identify fake websites? </h5>

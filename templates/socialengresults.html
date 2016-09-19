@@ -36,6 +36,7 @@
                 <a class="nav-item nav-link active" href="{{ url_for('social_eng') }}"> Social Engineering </a>
                 <a class="nav-item nav-link" href="{{ url_for('browser') }}"> Browser Security </a>
                 <a class="nav-item nav-link" href="{{ url_for('mobile') }}"> Mobile Security </a>
+                <a class="nav-item nav-link" href="{{ url_for('malware') }}"> Malware Security </a>
             </div>
         </nav>
     </header>
@@ -55,311 +56,314 @@
             <div class="jumbotron jumbotron-fluid col-md-12">
                 <div class="container">
                     <h1 class="display-3"> Social Engineering </h1>
-                    <h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4> </div>
+                    <!--<h4 class="lead"> Introduction or description of the module for people to read before they actually do it. </h4> </div>-->
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="container">
-                <div id="content-container" class="row">
-                    <div class="col-md-2">
-                        <div id="sidebar">
-                            <nav>
-                                <ul id="sidebar-links" class="nav nav-pills nav-stacked">
-                                    <li class="nav-item"> <a class="nav-link" id="link-one" href="#phishing"> Phishing </a> </li>
-                                    <hr>
-                                    <li class="nav-item"> <a class="nav-link" id="link-two" href="#fakesites"> Fake Websites </a> </li>
-                                    <hr>
-                                    <li class="nav-item"> <a class="nav-link" id="link-three" href="#spearphishing"> Spear Phishing </a> </li>
-                                    <hr>
-                                    <li class="nav-item"> <a class="nav-link" id="link-four" href="#privacy"> Privacy </a> </li>
+            <div class="row">
+                <div class="container">
+                    <div id="content-container" class="row">
+                        <div class="col-md-2">
+                            <div id="sidebar">
+                                <nav>
+                                    <ul id="sidebar-links" class="nav nav-pills nav-stacked">
+                                        <li class="nav-item"> <a class="nav-link" id="link-one" href="#phishing"> Phishing </a> </li>
+                                        <hr>
+                                        <li class="nav-item"> <a class="nav-link" id="link-two" href="#fakesites"> Fake Websites </a> </li>
+                                        <hr>
+                                        <li class="nav-item"> <a class="nav-link" id="link-three" href="#spearphishing"> Spear Phishing </a> </li>
+                                        <hr>
+                                        <li class="nav-item"> <a class="nav-link" id="link-four" href="#privacy"> Privacy </a> </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div id="content" class="col-md-10">
+                            <p class="card card-block card-instruction"> Instructions will look like this. </p>
+
+                            <div class="card card-block">
+                                <h3 id="phishing" class="card-title"> Phishing and You </h3>
+                                <hr>
+
+                                <p class="card card-block card-instruction"> Review the emails below and see if you think they are suspicious. </p>
+
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item"> <a class="nav-link light-bg active" data-toggle="tab" href="#level1" role="tab">Email 1</a> </li>
+                                    <li class="nav-item"> <a class="nav-link lighter-bg" data-toggle="tab" href="#level2" role="tab">Email 2</a> </li>
                                 </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div id="content" class="col-md-10">
-                        <p class="card card-block card-instruction"> Instructions will look like this. </p>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane card-block light-bg active" id="level1" role="tabpanel">
+                                        <p> To: a_student@columbusstate.edu
+                                            <br> From: "John Smith" &lt;john_smith@schoolfeepayment.xyz&gt;
+                                            <br> Subject: URGENT! Unbalanced account, dropped classes now if no REPLY
+                                        </p>
+                                        <p> Hello! </p>
+                                        <p> Your school account is nonbalanced. You will be dropped from all classes if administrative fee is not paid. Punishment fees may be charged to your account if you fail to pay in a timely manner. </p>
+                                        <p> You owe: $12.56 administrator fee. </p>
+                                        <p> Please do the needful and pay your account <span class="fake-link">here</span> or at <span class="fake-link">schoolfeepayment.xyz</span> </p>
+                                        <p> Thx, Jon Smith</p>
 
-                        <div class="card card-block">
-                            <h3 id="phishing" class="card-title"> Phishing and You </h3>
-                            <hr>
+                                    </div>
 
-                            <p class="card card-block card-instruction"> Review the emails below and see if you think they are suspicious. </p>
+                                    <div class="tab-pane card-block lighter-bg" id="level2" role="tabpanel">
+                                        <p> To: a_student@columbusstate.edu
+                                            <br> From: “Jeremy Little” &lt;j.little@fedaid.com&gt;
+                                            <br> Subject: Your FAFSA Account – Account Compromised
+                                        </p>
+                                        <p> Hello, </p>
+                                        <p> Or records show that you may be the victim of a computer virus or phishing scheme which has now taken control of your FAFSA Student Aid account. </p>
+                                        <p> Your FAFSA account contains sensitive personal information including, but not limited to: </p>
+                                        <p> your social security #
+                                            <br> Your parents' social security numbers
+                                            <br> Financial information form tax returns.
+                                            <br> Your personal address.
+                                            <br> The schools you have attending
+                                        </p>
 
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item"> <a class="nav-link light-bg active" data-toggle="tab" href="#level1" role="tab">Email 1</a> </li>
-                                <li class="nav-item"> <a class="nav-link lighter-bg" data-toggle="tab" href="#level2" role="tab">Email 2</a> </li>
-                            </ul>
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane card-block light-bg active" id="level1" role="tabpanel">
-                                    <p> To: a_student@columbusstate.edu
-                                        <br> From: "John Smith" &lt;john_smith@schoolfeepayment.xyz&gt;
-                                        <br> Subject: URGENT! Unbalanced account, dropped classes now if no REPLY
-                                    </p>
-                                    <p> Hello! </p>
-                                    <p> Your school account is nonbalanced. You will be dropped from all classes if administrative fee is not paid. Punishment fees may be charged to your account if you fail to pay in a timely manner. </p>
-                                    <p> You owe: $12.56 administrator fee. </p>
-                                    <p> Please do the needful and pay your account <span class="fake-link">here</span> or at <span class="fake-link">schoolfeepayment.xyz</span> </p>
-                                    <p> Thx, Jon Smith</p>
+                                        <p> At U.S. Department of Education, we care deeply about your security and will NEVER ask you for personal information over email. Instead, please go to this site and login to begin the process of recovering your account: <span class="fake-link">Recover Your Account here</span> </p>
 
-                                </div>
-
-                                <div class="tab-pane card-block lighter-bg" id="level2" role="tabpanel">
-                                    <p> To: a_student@columbusstate.edu
-                                        <br> From: “Jeremy Little” &lt;j.little@fedaid.com&gt;
-                                        <br> Subject: Your FAFSA Account – Account Compromised
-                                    </p>
-                                    <p> Hello, </p>
-                                    <p> Or records show that you may be the victim of a computer virus or phishing scheme which has now taken control of your FAFSA Student Aid account. </p>
-                                    <p> Your FAFSA account contains sensitive personal information including, but not limited to: </p>
-                                    <p> your social security #
-                                        <br> Your parents' social security numbers
-                                        <br> Financial information form tax returns.
-                                        <br> Your personal address.
-                                        <br> The schools you have attending
-                                    </p>
-
-                                    <p> At U.S. Department of Education, we care deeply about your security and will NEVER ask you for personal information over email. Instead, please go to this site and login to begin the process of recovering your account: <span class="fake-link">Recover Your Account here</span> </p>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card card-block">
-                            <div id="question1">
-                                <div id='q1-check' class="question-space"> &nbsp; </div>
-
-                                <h5> 1. Which of these emails is suspicious? </h5>
-
-                                <div class="form-check indent">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question1" id="q1a1" value="false"> Email 1
-                                    </label>
-
-                                    <br>
-
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question1" id="q1a2" value="false"> Email 2
-                                    </label>
-
-                                    <br>
-
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question1" id="q1a3" value="true"> Both
-                                    </label>
-
-                                    <br>
-
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question1" id="q1a4" value="false"> None
-                                    </label>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="form-check" style="text-align: center;">
-                                <button class="submit" onclick="checkQuestion1()"> Submit! </button>
-                            </div>
-                            <div id="email-results"></div>
-                        </div>
+                            <div class="card card-block">
+                                <div id="question1">
+                                    <div id='q1-check' class="question-space"> &nbsp; </div>
 
-                        <div class="card card-block">
-                            <h5> What is phishing? </h5>
-                            <p> A malicious entity contacts you, masquerading as a legitimate business and asks for information, directs you to a false website that tries to obtain your information, or otherwise tries to exploit you. </p>
-                            <h5> Phishing Warning Signs </h5>
-                            <ul>
-                                <li> Requests for personal information </li>
-                                <li> Generic greeting </li>
-                                <li> Urgency </li>
-                                <li> False links </li>
-                                <li> Grammar mistakes</li>
-                            </ul>
-                        </div>
-                        <div class="card card-block">
-                            <h5 id="fakesites"> Fake Websites </h5>
-                            <p> Phishing emails can take you to fake websites that are designed to look like legitimate websites. </p>
-                            <p class="card card-block card-instruction"> Click on the tabs below to switch between two websites. Which one is real? </p>
+                                    <h5> 1. Which of these emails is suspicious? </h5>
 
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item"> <a class="nav-link light-bg active" data-toggle="tab" href="#web1" role="tab">Website 1</a> </li>
-                                <li class="nav-item"> <a class="nav-link lighter-bg" data-toggle="tab" href="#web2" role="tab">Website 2</a> </li>
-                            </ul>
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane card-block light-bg active" id="web1" role="tabpanel">
-                                    <img id="fake-website-image-1" style="max-width: 100%" src="static/images/image1.jpg">
+                                    <div class="form-check indent">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question1" id="q1a1" value="false"> Email 1
+                                        </label>
+
+                                        <br>
+
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question1" id="q1a2" value="false"> Email 2
+                                        </label>
+
+                                        <br>
+
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question1" id="q1a3" value="true"> Both
+                                        </label>
+
+                                        <br>
+
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question1" id="q1a4" value="false"> None
+                                        </label>
+                                    </div>
                                 </div>
 
-                                <div class="tab-pane card-block lighter-bg" id="web2" role="tabpanel">
-                                    <img id="fake-website-image-2" style="max-width: 100%" src="static/images/image2.jpg">
+                                <div class="form-check" style="text-align: center;">
+                                    <button class="submit" onclick="checkQuestion1()"> Submit! </button>
                                 </div>
+                                <div id="email-results"></div>
                             </div>
 
-                            <div id="question2">
-                                <div id='q2-check' class="question-space"> &nbsp; </div>
+                            <div class="card card-block">
+                                <h5> What is phishing? </h5>
+                                <p> A malicious entity contacts you, masquerading as a legitimate business and asks for information, directs you to a false website that tries to obtain your information, or otherwise tries to exploit you. </p>
+                                <h5> Phishing Warning Signs </h5>
+                                <ul>
+                                    <li> Requests for personal information </li>
+                                    <li> Generic greeting </li>
+                                    <li> Urgency </li>
+                                    <li> False links </li>
+                                    <li> Grammar mistakes</li>
+                                </ul>
+                            </div>
+                            <div class="card card-block">
+                                <h5 id="fakesites"> Fake Websites </h5>
+                                <p> Phishing emails can take you to fake websites that are designed to look like legitimate websites. </p>
+                                <p class="card card-block card-instruction"> Click on the tabs below to switch between two websites. Which one is real? </p>
 
-                                <h5> 1. Which of these websites is real? </h5>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item"> <a class="nav-link light-bg active" data-toggle="tab" href="#web1" role="tab">Website 1</a> </li>
+                                    <li class="nav-item"> <a class="nav-link lighter-bg" data-toggle="tab" href="#web2" role="tab">Website 2</a> </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane card-block light-bg active" id="web1" role="tabpanel">
+                                        <img id="fake-website-image-1" style="max-width: 100%" src="static/images/image1.jpg">
+                                    </div>
 
-                                <div class="form-check indent">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question2" id="q2a1" value="true"> Website 1
-                                    </label>
-
-                                    <br>
-
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question2" id="q2a2" value="false"> Website 2
-                                    </label>
-
-                                    <br>
-
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question2" id="q2a3" value="false"> Both
-                                    </label>
-
-                                    <br>
-
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question2" id="q2a4" value="false"> None
-                                    </label>
+                                    <div class="tab-pane card-block lighter-bg" id="web2" role="tabpanel">
+                                        <img id="fake-website-image-2" style="max-width: 100%" src="static/images/image2.jpg">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-check" style="text-align: center;">
-                                <button class="submit" onclick="checkQuestion2()"> Submit! </button>
-                            </div>
+                                <div id="question2">
+                                    <div id='q2-check' class="question-space"> &nbsp; </div>
 
-                            <div id="fake-websites-results"></div>
-                        </div>
-                        <div class="card card-block">
-                            <h5> How do you identify fake websites? </h5>
-                            <ul class="real-list">
-                                <li> Check the URL! URLs are unique, so no two websites can have the same URL. However, <i>www.google.com</i> and <i>www.goog1e.com</i> can look a lot alike, especially at a glance.</li>
-                                <li> Check whether the website is using HTTPS or HTTP. Most websites that involve secure transactions or your personal information will use HTTPS. </li>
-                                <li> Sometimes, websites use special fonts, which cannot be easily replicated. Watch out for fonts that look out of place, like <span style="font-family: Times New Roman;"> this part of the sentence</span>.</li>
-                                <li> Obvious grammar errors are also a suspicious sign. Very rarely will there be grammar errors on genuine websites, especially ones for businesses. </li>
-                            </ul>
-                        </div>
-                        <div class="card card-block">
-                            <h5 id="spearphishing"> Spear Phishing </h5>
-                            <p>
-                                "Spear Phishing" is a specific type of phishing attack that appears to come from a trusted source. Attackers can use information they find online to impersonate someone that the victim trusts, increasing the chance of a successful attack.
-                            </p>
-                            <div id="spearphishing-image">
-                                <img style="margin: auto;display: block;" src="/static/images/phishing-email.png">
-                            </div>
-                            <br/>
-                            <div id="question3">
-                                <div id='q3-check' class="question-space"> &nbsp; </div>
+                                    <h5> 1. Which of these websites is real? </h5>
 
-                                <h5> Do you think that this is a phishing email? </h5>
+                                    <div class="form-check indent">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2a1" value="true"> Website 1
+                                        </label>
 
-                                <div class="form-check indent">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question3" id="q3a1" value="true"> Yes
-                                    </label>
+                                        <br>
 
-                                    <br>
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2a2" value="false"> Website 2
+                                        </label>
 
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="question3" id="q3a2" value="false"> No
-                                    </label>
+                                        <br>
 
-                                    <br>
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2a3" value="false"> Both
+                                        </label>
 
+                                        <br>
+
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question2" id="q2a4" value="false"> None
+                                        </label>
+                                    </div>
                                 </div>
+
+                                <div class="form-check" style="text-align: center;">
+                                    <button class="submit" onclick="checkQuestion2()"> Submit! </button>
+                                </div>
+
+                                <div id="fake-websites-results"></div>
                             </div>
-                            <div class="form-check" style="text-align: center;">
-                                <button class="submit" onclick="checkQuestion3()"> Submit! </button>
+                            <div class="card card-block">
+                                <h5> How do you identify fake websites? </h5>
+                                <ul class="real-list">
+                                    <li> Check the URL! URLs are unique, so no two websites can have the same URL. However, <i>www.google.com</i> and <i>www.goog1e.com</i> can look a lot alike, especially at a glance.</li>
+                                    <li> Check whether the website is using HTTPS or HTTP. Most websites that involve secure transactions or your personal information will use HTTPS. </li>
+                                    <li> Sometimes, websites use special fonts, which cannot be easily replicated. Watch out for fonts that look out of place, like <span style="font-family: Times New Roman;"> this part of the sentence</span>.</li>
+                                    <li> Obvious grammar errors are also a suspicious sign. Very rarely will there be grammar errors on genuine websites, especially ones for businesses. </li>
+                                </ul>
                             </div>
-                            <div id="phishing-results"></div>
-                        </div>
-                        <div class="card card-block">
-                            <h5 id="privacy">Privacy</h5>
-                            <p>
-                                Disclosing personal information on the internet can have devastating effects. Social networks can provide attackers with information such as full name, DOB, hometown, relationship information, education, graduation dates, pet names, interests, hobbies, and affiliations. This information can be used in a spear phishing attack to gain further information about a target, as well as crafting targeted password attacks.
+                            <div class="card card-block">
+                                <h5 id="spearphishing"> Spear Phishing </h5>
+                                <p>
+                                    "Spear Phishing" is a specific type of phishing attack that appears to come from a trusted source. Attackers can use information they find online to impersonate someone that the victim trusts, increasing the chance of a successful attack.
+                                </p>
+                                <div id="spearphishing-image">
+                                    <img style="margin: auto;display: block;" src="/static/images/phishing-email.png">
+                                </div>
                                 <br/>
-                                <br/> There is a shocking amount of information available online. Knowing someone's name and location is often all you need to find specific details about someone.
-                            </p>
+                                <div id="question3">
+                                    <div id='q3-check' class="question-space"> &nbsp; </div>
 
-                            <p class="card card-block card-instruction">Type your first and last name into the form below to see if we can find information about you.</p>
+                                    <h5> Do you think that this is a phishing email? </h5>
 
-                            <form method="POST">
-                                <fieldset class="form-group" style="padding-bottom:10px;">
-                                    <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
-                                    <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
-                                </fieldset>
-                                <input id="clickClick" value="Submit" type="submit">
-                            </form>
+                                    <div class="form-check indent">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question3" id="q3a1" value="true"> Yes
+                                        </label>
 
-                            <a name="results"></a>
-                            <div class="card-deck-wrapper">
-                                <div class="card-deck">
-                                    {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
-                                    <div class="card card-block m-b-1">
-                                        <h4>
+                                        <br>
+
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="question3" id="q3a2" value="false"> No
+                                        </label>
+
+                                        <br>
+
+                                    </div>
+                                </div>
+                                <div class="form-check" style="text-align: center;">
+                                    <button class="submit" onclick="checkQuestion3()"> Submit! </button>
+                                </div>
+                                <div id="phishing-results"></div>
+                            </div>
+                            <div class="card card-block">
+                                <h5 id="privacy">Privacy</h5>
+                                <p>
+                                    Disclosing personal information on the internet can have devastating effects. Social networks can provide attackers with information such as full name, DOB, hometown, relationship information, education, graduation dates, pet names, interests, hobbies, and affiliations. This information can be used in a spear phishing attack to gain further information about a target, as well as crafting targeted password attacks.
+                                    <br/>
+                                    <br/> There is a shocking amount of information available online. Knowing someone's name and location is often all you need to find specific details about someone.
+                                </p>
+
+                                <p class="card card-block card-instruction">Type your first and last name into the form below to see if we can find information about you.</p>
+
+                                <form method="POST">
+                                    <fieldset class="form-group" style="padding-bottom:10px;">
+                                        <input name="firstname" type="text" class="form-control" placeholder="First Name" required>
+                                        <input name="lastname" type="text" class="form-control" placeholder="Last Name" required>
+                                    </fieldset>
+                                    <input id="clickClick" value="Submit" type="submit">
+                                </form>
+
+                                <a name="results"></a>
+                                <div class="card-deck-wrapper">
+                                    <div class="card-deck">
+                                        {% for dict_item in data if dict_item['dob'] or dict_item['age'] or dict_item['relatives'] or dict_item['aliases' ]%}
+                                        <div class="card card-block m-b-1">
+                                            <h4>
                                            {% if dict_item['name'] %}
                                            {{dict_item['name']}}</br>
                                            {% endif %}
                                         </h4>
-                                        <p>
-                                            {% if dict_item['dob'] %}
-                                            <b>DOB: </b>{{dict_item['dob']}}</br>
-                                            {% endif %} {% if dict_item['age'] %}
-                                            <b>Age:</b> {{dict_item['age']}}</br>
-                                            {% endif %} {% if dict_item['locations'] %}
-                                            <b>Locations: </b>{{', '.join(dict_item['locations'])}}</br>
-                                            {% endif %} {% if dict_item['marital_status'] %}
-                                            <b>Marital Status:</b> {{dict_item['includes']['marital_status']}}</br>
-                                            {% endif %} {% if dict_item['relatives'] %}
-                                            <b>Relatives: </b>{{', '.join(dict_item['relatives'])}}</br>
-                                            {% endif %} {% if dict_item['aliases' ] %}
-                                            <b>Aliases: </b>{{', '.join(dict_item['aliases'])}}</br>
-                                            {% endif %}
-                                        </p>
+                                            <p>
+                                                {% if dict_item['dob'] %}
+                                                <b>DOB: </b>{{dict_item['dob']}}</br>
+                                                {% endif %} {% if dict_item['age'] %}
+                                                <b>Age:</b> {{dict_item['age']}}</br>
+                                                {% endif %} {% if dict_item['locations'] %}
+                                                <b>Locations: </b>{{', '.join(dict_item['locations'])}}</br>
+                                                {% endif %} {% if dict_item['marital_status'] %}
+                                                <b>Marital Status:</b> {{dict_item['includes']['marital_status']}}</br>
+                                                {% endif %} {% if dict_item['relatives'] %}
+                                                <b>Relatives: </b>{{', '.join(dict_item['relatives'])}}</br>
+                                                {% endif %} {% if dict_item['aliases' ] %}
+                                                <b>Aliases: </b>{{', '.join(dict_item['aliases'])}}</br>
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                        {% else %}
+                                        <p>No data found. This doesn't mean that you don't have public information on the internet, just that our specific program can't find any.</p>
+                                        {% endfor %}
                                     </div>
-                                    {% else %}
-                                    <p>No data found. This doesn't mean that you don't have public information on the internet, just that our specific program can't find any.</p>
-                                    {% endfor %}
                                 </div>
-                            </div>
-                            </br>
+                                </br>
 
-                            Some tips to keep your information safe and out of the hands of attackers:
-                            <ul class="real-list">
-                                <li>Be mindful of how much personal information you share on social networks.</li>
-                                <li>Dispose of old computers and phones (any device with data) securely.</li>
-                                <li>For password security verification questions, use a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
-                            </ul>
+                                Some tips to keep your information safe and out of the hands of attackers:
+                                <ul class="real-list">
+                                    <li>Be mindful of how much personal information you share on social networks.</li>
+                                    <li>Dispose of old computers and phones (any device with data) securely.</li>
+                                    <li>For password security verification questions, use a password for all answers. The answers to most security questions are things that an attacker can find out about you.</li>
+                                </ul>
+                            </div>
+                            <div class="card card-block no-border"> <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('social_engineering_quiz') }}" role="button"> Take the quiz! </a> </div>
                         </div>
-                        <div class="card card-block no-border"> <a id="p-button" class="btn btn-primary btn-lg btn-block" href="{{ url_for('social_engineering_quiz') }}" role="button"> Take the quiz! </a> </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="static/js/util.js"></script>
-    <script src="static/js/tab.js"></script>
-    <script src="static/js/scrollspy.js"></script>
-    <script src="static/js/jquery.scrollTo.min.js"></script>
-    <script src="static/js/csam.js"></script>
-    <script>
-        $('body').scrollspy({
-            target: '#sidebar',
-            offset: ($(window).height() * .075)
-        });
-        $(document).ready(function () {
-            $('#sidebar-links > li > a[href^="#"]').click(function (e) {
-                e.preventDefault();
-                $(window).stop(true).scrollTo(this.hash, {
-                    duration: 700,
-                    interrupt: true,
-                    offset: -90,
-                    easing: "swing"
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="static/js/util.js"></script>
+        <script src="static/js/tab.js"></script>
+        <script src="static/js/scrollspy.js"></script>
+        <script src="static/js/jquery.scrollTo.min.js"></script>
+        <script src="static/js/csam.js"></script>
+        <script>
+            $(function () {
+                window.location.hash = "results";
+            });
+            $('body').scrollspy({
+                target: '#sidebar',
+                offset: ($(window).height() * .075)
+            });
+            $(document).ready(function () {
+                $('#sidebar-links > li > a[href^="#"]').click(function (e) {
+                    e.preventDefault();
+                    $(window).stop(true).scrollTo(this.hash, {
+                        duration: 700,
+                        interrupt: true,
+                        offset: -90,
+                        easing: "swing"
+                    });
                 });
             });
-        });
-    </script>
+        </script>
 </body>
 
 </html>
