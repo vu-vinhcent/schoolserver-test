@@ -4,27 +4,55 @@ function checkProgress() {
     var pDone = document.cookie.replace(/(?:(?:^|.*;\s*)p\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     var seDone = document.cookie.replace(/(?:(?:^|.*;\s*)se\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     var bsDone = document.cookie.replace(/(?:(?:^|.*;\s*)bs\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    var msDone = document.cookie.replace(/(?:(?:^|.*;\s*)ms\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    var mosDone = document.cookie.replace(/(?:(?:^|.*;\s*)mos\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    var masDone = document.cookie.replace(/(?:(?:^|.*;\s*)mas\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
     if (pDone == "true") {
         $("#p-card").toggleClass("card-success-outline");
-        $("#p-title").append('<span class="green"> &#10004; </span>')
+        //        $("#p-title").append('<span class="green"> &#10004; </span>')
     }
 
     if (seDone == "true") {
         $("#se-card").toggleClass("card-success-outline");
-        $("#se-title").append('<span class="green"> &#10004; </span>')
+        //        $("#se-title").append('<span class="green"> &#10004; </span>')
     }
 
     if (bsDone == "true") {
         $("#bs-card").toggleClass("card-success-outline");
-        $("#bs-title").append('<span class="green"> &#10004; </span>')
+        //        $("#bs-title").append('<span class="green"> &#10004; </span>')
     }
 
-    if (msDone == "true") {
-        $("#ms-card").toggleClass("card-success-outline");
-        $("#ms-title").append('<span class="green"> &#10004; </span>')
+    if (mosDone == "true") {
+        $("#mos-card").toggleClass("card-success-outline");
+        //        $("#ms-title").append('<span class="green"> &#10004; </span>')
     }
+
+    if (masDone == "true") {
+        $("#mas-card").toggleClass("card-success-outline");
+        //        $("#ms-title").append('<span class="green"> &#10004; </span>')
+    }
+
+    if (pDone && seDone && bsDone && mosDone && masDone) {
+        $('#cert-card').css('display', 'block');
+    }
+}
+
+function setHeight() {
+    var greatest = $('#p-card-block').height();
+    var greatest2 = $('#p-card-block > p').height();
+    var greatest3 = $('#p-card-block > h4').height();
+    var greatest4 = $('#p-card > img').height();
+    var $cards = $('.card-block');
+    var temp = 0;
+
+    console.log(greatest);
+    console.log($cards);
+
+    $cards.each(function () {
+        $(this).height(greatest);
+        temp = $('h4', this).height();
+        $('p', this).height((greatest2 + greatest3) - temp);
+    });
 }
 
 function checkQuestion1() {
@@ -40,13 +68,20 @@ function checkQuestion1() {
 function checkQuestion2() {
     if ($('input[name=question2]:checked').val() == 'true') {
         $("#q2-check").replaceWith('<span id="q2-check" class="question-space green"> &#10004; </span>');
-        document.getElementById('fake-websites-results').innerHTML = '<br/><p class="card card-block card-instruction">Correct! Notice that website 1 has "https://" as well as the padlock icon, where website 2 doesn\'t.</p>';
+        document.getElementById('fake-websites-results').innerHTML = 'Correct! Notice that website 1 has "https://" as well as the padlock icon, where website 2 doesn\'t.';
     } else {
         $("#q2-check").replaceWith('<span id="q2-check" class="question-space red"> &#10008; </span>');
-        document.getElementById('fake-websites-results').innerHTML = '<br/><p class="card card-block card-instruction">Incorrect! Notice that website 1 has "https://" as well as the padlock icon, where website 2 doesn\'t.</p>';
+        document.getElementById('fake-websites-results').innerHTML = 'Incorrect! Notice that website 1 has "https://" as well as the padlock icon, where website 2 doesn\'t.';
     }
-    document.getElementById("fake-website-image-1").src = "static/images/image1 copy.jpg";
-    document.getElementById("fake-website-image-2").src = "static/images/image2 copy.jpg";
+
+    $(window).scrollTo($('#fakesites'), {
+        duration: 600,
+        offset: -100
+    });
+
+    $('#fake-web-exer').slideUp();
+
+    $('#web-results').fadeIn();
 }
 
 function checkQuestion3() {
@@ -171,44 +206,7 @@ function checkQuiz() {
     }
 
     if (numCorrect == 2) {
-        var part1 = '<a id="';
-        var part2 = '" class="btn btn-primary btn-lg next" href="/" role="button" onclick="checkQuestion(this)"> Start a new module! </a>';
-
-        if ($('title').text().indexOf('Password') >= 0) {
-            $('.next').replaceWith(part1 + 'p' + part2);
-        }
-
-        if ($('title').text().indexOf('Browser') >= 0) {
-            $('.next').replaceWith(part1 + 'bs' + part2);
-        }
-
-        if ($('title').text().indexOf('Social') >= 0) {
-            $('.next').replaceWith(part1 + 'se' + part2);
-        }
-
-        if ($('title').text().indexOf('Mobile') >= 0) {
-            $('.next').replaceWith(part1 + 'ms' + part2);
-        }
-    } else {
-        var part3 = '<a class="btn btn-primary btn-lg next" href="';
-        var part4 = '" role="button"> Back to the module! </a>';
-
-        if ($('title').text().indexOf('Password') >= 0) {
-            console.log(part3 + 'passwords.html' + part4);
-            $('.next').replaceWith(part3 + '/passwords' + part4);
-        }
-
-        if ($('title').text().indexOf('Browser') >= 0) {
-            $('.next').replaceWith(part3 + '/browser' + part4);
-        }
-
-        if ($('title').text().indexOf('Social') >= 0) {
-            $('.next').replaceWith(part3 + '/social_engineering' + part4);
-        }
-
-        if ($('title').text().indexOf('Mobile') >= 0) {
-            $('.next').replaceWith(part3 + '/mobile' + part4);
-        }
+        $('.btn').removeClass('disabled');
     }
 }
 
@@ -241,6 +239,14 @@ function fadeBG() {
 }
 
 $(document).ready(function () {
+    //    setHeight();
+    //
+    //    if ($('title').text().indexOf('Cyber Security Awareness Module') <= 0) {
+    //        $(window).resize(function () {
+    //            setheight();
+    //        });
+    //    }
+
     $('#sidebar').css('width', $("#content-container").width() * .15);
 
     if ($('title').text().indexOf('Quiz') <= 0 && $('title').text().indexOf('Module') <= 0) {
@@ -278,7 +284,11 @@ $(document).ready(function () {
         document.cookie = "bs=true; ";
     });
 
-    $('#ms-button').click(function () {
-        document.cookie = "ms=true; ";
+    $('#mos-button').click(function () {
+        document.cookie = "mos=true; ";
+    });
+
+    $('#mas-button').click(function () {
+        document.cookie = "mas=true; ";
     });
 });
